@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diagnóstico Executivo OPERA™ — Análise estratégica para pequenas empresas.">
+  <meta name="theme-color" content="#1F3D34">
+  <title>LUME OS — Diagnóstico OPERA™</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Design System -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/helpers.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- Telas -->
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/identification.css">
+  <link rel="stylesheet" href="css/questionnaire.css">
+  <link rel="stylesheet" href="css/result.css">
+
+  <!-- Responsivo -->
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <a href="#lume-wizard" class="lume-skip-nav">Ir para o conteúdo</a>
+
+  <nav class="lume-nav" role="navigation" aria-label="Navegação principal">
+    <div class="lume-nav__inner">
+      <a href="/" class="lume-nav__logo" aria-label="LUME OS">
+        <div class="lume-nav__logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 3v9h8" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="lume-nav__logo-text">
+          <span class="lume-nav__logo-name">LUME OS</span>
+          <span class="lume-nav__logo-sub">Diagnóstico OPERA™</span>
+        </div>
+      </a>
+      <div class="lume-nav__cta">
+        <button type="button" class="lume-btn lume-btn--primary lume-btn--sm" data-action="start-diagnostic">
+          Iniciar avaliação
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- WIZARD -->
+  <div id="lume-wizard" class="lume-wizard" role="main">
+
+
+    <!-- ══ STEP 1 — LANDING ══ -->
+    <div data-wizard-step="landing" class="lume-wizard__step">
+
+      <section class="lume-hero" aria-labelledby="hero-title">
+        <div class="lume-container lume-hero__inner">
+          <div class="lume-hero__content">
+            <div class="lume-hero__eyebrow anim-fade-in-up" data-hero-item>
+              <span class="lume-badge lume-badge--primary lume-badge--dot">Diagnóstico Executivo OPERA™</span>
+            </div>
+            <h1 class="lume-hero__title anim-fade-in-up" id="hero-title" data-hero-item>
+              Descubra em poucos minutos<br>
+              o que está impedindo<br>
+              <span class="lume-hero__title-highlight">sua empresa de crescer.</span>
+            </h1>
+            <p class="lume-hero__subtitle anim-fade-in-up" data-hero-item>
+              O Método OPERA™ avalia os cinco pilares críticos do seu negócio
+              e entrega um diagnóstico executivo com plano de ação concreto.
+            </p>
+            <div class="lume-hero__actions anim-fade-in-up" data-hero-item>
+              <button type="button" class="lume-btn lume-btn--primary lume-btn--xl" data-action="start-diagnostic">
+                Iniciar minha avaliação
+                <span class="lume-btn__icon" aria-hidden="true">
+                  <svg viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </button>
+              <a href="#como-funciona" class="lume-btn lume-btn--ghost lume-btn--lg">Como funciona →</a>
+            </div>
+            <div class="lume-hero__chips anim-fade-in-up" data-hero-item>
+              <span class="lume-chip lume-chip--check">Cerca de 5 minutos</span>
+              <span class="lume-chip lume-chip--check">20 perguntas</span>
+              <span class="lume-chip lume-chip--check">Resultado imediato</span>
+              <span class="lume-chip lume-chip--check">Plano personalizado</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="lume-benefits">
+        <div class="lume-container">
+          <ul class="lume-benefits__list lume-reveal-stagger" role="list">
+            <li class="lume-benefit">
+              <div class="lume-benefit__check" aria-hidden="true"><svg viewBox="0 0 10 8"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="lume-benefit__text">5 dimensões avaliadas</span>
+            </li>
+            <li class="lume-benefit">
+              <div class="lume-benefit__check" aria-hidden="true"><svg viewBox="0 0 10 8"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="lume-benefit__text">20 perguntas objetivas</span>
+            </li>
+            <li class="lume-benefit">
+              <div class="lume-benefit__check" aria-hidden="true"><svg viewBox="0 0 10 8"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="lume-benefit__text">Análise por dimensão</span>
+            </li>
+            <li class="lume-benefit">
+              <div class="lume-benefit__check" aria-hidden="true"><svg viewBox="0 0 10 8"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <span class="lume-benefit__text">Plano de ação personalizado</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="lume-section" id="como-funciona" aria-labelledby="como-funciona-title">
+        <div class="lume-container">
+          <div class="lume-section__header lume-reveal">
+            <span class="lume-section__eyebrow">Como funciona</span>
+            <h2 class="lume-section__title" id="como-funciona-title">Simples, rápido e preciso.</h2>
+            <p class="lume-section__subtitle">Três etapas para sair da incerteza e entrar no modo de ação.</p>
+          </div>
+          <div class="lume-steps lume-reveal-stagger">
+            <div class="lume-step">
+              <div class="lume-step__number" aria-hidden="true">1</div>
+              <h3 class="lume-step__title">Responder</h3>
+              <p class="lume-step__desc">20 perguntas objetivas sobre como sua empresa funciona hoje. Sem jargão, sem complicação.</p>
+            </div>
+            <div class="lume-step">
+              <div class="lume-step__number" aria-hidden="true">2</div>
+              <h3 class="lume-step__title">Analisar</h3>
+              <p class="lume-step__desc">O Método OPERA™ processa suas respostas e identifica com precisão onde estão os gargalos.</p>
+            </div>
+            <div class="lume-step">
+              <div class="lume-step__number" aria-hidden="true">3</div>
+              <h3 class="lume-step__title">Evoluir</h3>
+              <p class="lume-step__desc">Você recebe um relatório executivo com score, diagnóstico consultivo e primeiros passos concretos.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lume-section lume-opera" id="opera" aria-labelledby="opera-title">
+        <div class="lume-container">
+          <div class="lume-section__header lume-reveal">
+            <span class="lume-section__eyebrow">O método</span>
+            <h2 class="lume-section__title" id="opera-title">Cinco pilares. Uma avaliação completa.</h2>
+            <p class="lume-section__subtitle">O Método OPERA™ avalia as cinco dimensões que mais impactam a capacidade de crescimento de uma pequena empresa.</p>
+          </div>
+          <div class="lume-opera__cards lume-reveal-stagger">
+            <article class="lume-opera-card">
+              <div class="lume-opera-card__icon" aria-hidden="true"><svg viewBox="0 0 18 18"><rect x="2" y="2" width="6" height="6" rx="1.5"/><rect x="10" y="2" width="6" height="6" rx="1.5"/><rect x="2" y="10" width="6" height="6" rx="1.5"/><rect x="10" y="10" width="6" height="6" rx="1.5"/></svg></div>
+              <div class="lume-opera-card__letter" aria-hidden="true">O</div>
+              <h3 class="lume-opera-card__name">Organização</h3>
+              <p class="lume-opera-card__desc">Clareza de prioridades, objetivos definidos e rotina previsível.</p>
+            </article>
+            <article class="lume-opera-card">
+              <div class="lume-opera-card__icon" aria-hidden="true"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="3"/><path d="M9 2v2M9 14v2M2 9h2M14 9h2"/></svg></div>
+              <div class="lume-opera-card__letter" aria-hidden="true">P</div>
+              <h3 class="lume-opera-card__name">Processos</h3>
+              <p class="lume-opera-card__desc">Padrões definidos, menos improvisos e retrabalho eliminado.</p>
+            </article>
+            <article class="lume-opera-card">
+              <div class="lume-opera-card__icon" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 15h14M4 15V8M9 15V5M14 15V8"/></svg></div>
+              <div class="lume-opera-card__letter" aria-hidden="true">E</div>
+              <h3 class="lume-opera-card__name">Estrutura</h3>
+              <p class="lume-opera-card__desc">Ferramentas certas, informação acessível e operação sustentável.</p>
+            </article>
+            <article class="lume-opera-card">
+              <div class="lume-opera-card__icon" aria-hidden="true"><svg viewBox="0 0 18 18"><circle cx="7" cy="6" r="2.5"/><path d="M2 15c0-2.76 2.24-5 5-5s5 2.24 5 5"/><circle cx="13.5" cy="6" r="2"/><path d="M12.5 15c0-1.85.83-3.51 2-4.5"/></svg></div>
+              <div class="lume-opera-card__letter" aria-hidden="true">R</div>
+              <h3 class="lume-opera-card__name">Relacionamento</h3>
+              <p class="lume-opera-card__desc">Experiência do cliente, comunicação consistente e fidelização.</p>
+            </article>
+            <article class="lume-opera-card">
+              <div class="lume-opera-card__icon" aria-hidden="true"><svg viewBox="0 0 18 18"><path d="M2 13L6 9l3 3 4-5 3-2"/><circle cx="6" cy="9" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+              <div class="lume-opera-card__letter" aria-hidden="true">A</div>
+              <h3 class="lume-opera-card__name">Acompanhamento</h3>
+              <p class="lume-opera-card__desc">Indicadores monitorados, decisões fundamentadas e metas revisadas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="lume-section lume-cta-final" id="iniciar">
+        <div class="lume-container lume-container--md">
+          <div class="lume-cta-final__card lume-reveal">
+            <span class="lume-cta-final__kicker">Diagnóstico Executivo · Método OPERA™</span>
+            <h2 class="lume-cta-final__title">Seu diagnóstico está<br>a 5 minutos de distância.</h2>
+            <p class="lume-cta-final__desc">Tenha clareza do que está travando seu crescimento e descubra por onde começar — de forma objetiva e sem achismos.</p>
+            <button type="button" class="lume-btn lume-btn--accent lume-btn--xl" data-action="start-diagnostic">
+              Iniciar avaliação executiva
+              <span class="lume-btn__icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </button>
+            <p class="lume-cta-final__disclaimer">Sem custo. Resultado imediato.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="lume-footer" role="contentinfo">
+        <div class="lume-container">
+          <div class="lume-footer__inner">
+            <p class="lume-footer__copy">&copy; 2025 LUME OS. Todos os direitos reservados.</p>
+            <nav class="lume-footer__links" aria-label="Links institucionais">
+              <a href="#" class="lume-footer__link">Privacidade</a>
+              <a href="#" class="lume-footer__link">Termos</a>
+              <a href="#" class="lume-footer__link">Contato</a>
+            </nav>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- /landing -->
+
+
+    <!-- ══ STEP 2 — IDENTIFICATION ══ -->
+    <div data-wizard-step="identification" class="lume-wizard__step">
+      <div class="lume-identification">
+        <div class="lume-container lume-container--sm lume-identification__inner">
+
+          <button type="button" class="lume-back-link" onclick="LUME.App.backToLanding()" aria-label="Voltar">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M10 3L5 8l5 5"/></svg>
+            Voltar
+          </button>
+
+          <nav class="lume-step-indicator" aria-label="Etapas">
+            <div class="lume-step-indicator__item is-active" aria-current="step">
+              <div class="lume-step-indicator__dot">1</div>
+              <span>Identificação</span>
+            </div>
+            <div class="lume-step-indicator__line" role="presentation"></div>
+            <div class="lume-step-indicator__item">
+              <div class="lume-step-indicator__dot">2</div>
+              <span>Perguntas</span>
+            </div>
+            <div class="lume-step-indicator__line" role="presentation"></div>
+            <div class="lume-step-indicator__item">
+              <div class="lume-step-indicator__dot">3</div>
+              <span>Resultado</span>
+            </div>
+          </nav>
+
+          <div class="lume-identification__header">
+            <span class="lume-identification__eyebrow">Identificação</span>
+            <h2 class="lume-identification__title">Uma avaliação personalizada<br>começa com o seu contexto.</h2>
+            <p class="lume-identification__subtitle">Em menos de 5 minutos, você terá um diagnóstico executivo completo — personalizado para o seu negócio e segmento.</p>
+          </div>
+
+          <div class="lume-form">
+            <div class="lume-form__grid">
+
+              <div class="lume-form__group">
+                <label class="lume-form__label lume-form__label--required" for="field-name">Nome</label>
+                <input class="lume-form__input" type="text" id="field-name" placeholder="Como você se chama?" autocomplete="name" maxlength="80">
+                <span class="lume-form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="lume-form__group">
+                <label class="lume-form__label lume-form__label--required" for="field-company">Empresa</label>
+                <input class="lume-form__input" type="text" id="field-company" placeholder="Como se chama seu negócio?" autocomplete="organization" maxlength="80">
+                <span class="lume-form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="lume-form__group">
+                <label class="lume-form__label lume-form__label--required" for="field-email">E-mail</label>
+                <input class="lume-form__input" type="email" id="field-email" placeholder="Seu melhor e-mail" autocomplete="email" inputmode="email">
+                <span class="lume-form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="lume-form__group">
+                <label class="lume-form__label lume-form__label--required" for="field-phone">Telefone</label>
+                <input class="lume-form__input" type="tel" id="field-phone" placeholder="WhatsApp ou telefone" autocomplete="tel" inputmode="tel" maxlength="20">
+                <span class="lume-form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="lume-form__group lume-form__group--full">
+                <label class="lume-form__label lume-form__label--required" for="field-segment">Segmento de atuação</label>
+                <div class="lume-form__select-wrapper">
+                  <select class="lume-form__select" id="field-segment">
+                    <option value="" disabled selected>Em que segmento você atua?</option>
+                    <option value="salao">Salão de Beleza</option>
+                    <option value="clinica">Clínica Estética</option>
+                    <option value="barbearia">Barbearia</option>
+                    <option value="beauty">Beauty Design</option>
+                    <option value="spa">Spa &amp; Bem-estar</option>
+                    <option value="studio">Studio Especializado</option>
+                    <option value="consultoria">Consultoria</option>
+                    <option value="servicos">Serviços em Geral</option>
+                    <option value="comercio">Comércio</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+                <span class="lume-form__error" role="alert" aria-live="polite"></span>
+              </div>
+
+            </div>
+
+            <div class="lume-form__footer">
+              <p class="lume-form__footer-note">
+                Seus dados são <strong>confidenciais</strong> e utilizados exclusivamente para personalizar este diagnóstico.
+              </p>
+              <button class="lume-btn lume-btn--primary lume-btn--lg" onclick="LUME.App.submitIdentification()" type="button">
+                Iniciar avaliação →
+                <span class="lume-btn__icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /identification -->
+
+
+    <!-- ══ STEP 3 — QUESTIONNAIRE ══ -->
+    <div data-wizard-step="questionnaire" class="lume-wizard__step">
+      <div class="lume-questionnaire">
+        <div class="lume-questionnaire__inner">
+
+          <div class="lume-q-progress">
+            <div class="lume-q-progress__meta">
+              <span class="lume-q-progress__label">Avaliação OPERA™</span>
+              <span class="lume-q-progress__num" id="q-progress-num">1 / 20</span>
+            </div>
+            <div class="lume-q-progress__track">
+              <div class="lume-q-progress__fill" id="q-progress-fill"></div>
+            </div>
+          </div>
+
+          <nav class="lume-q-pilar-track" aria-label="Pilares OPERA">
+            <div class="lume-q-pilar-pip" id="q-pip-0"><div class="lume-q-pilar-pip__dot">O</div><span class="lume-q-pilar-pip__label">Organização</span></div>
+            <div class="lume-q-pilar-sep" role="presentation"></div>
+            <div class="lume-q-pilar-pip" id="q-pip-1"><div class="lume-q-pilar-pip__dot">P</div><span class="lume-q-pilar-pip__label">Processos</span></div>
+            <div class="lume-q-pilar-sep" role="presentation"></div>
+            <div class="lume-q-pilar-pip" id="q-pip-2"><div class="lume-q-pilar-pip__dot">E</div><span class="lume-q-pilar-pip__label">Estrutura</span></div>
+            <div class="lume-q-pilar-sep" role="presentation"></div>
+            <div class="lume-q-pilar-pip" id="q-pip-3"><div class="lume-q-pilar-pip__dot">R</div><span class="lume-q-pilar-pip__label">Relacionamento</span></div>
+            <div class="lume-q-pilar-sep" role="presentation"></div>
+            <div class="lume-q-pilar-pip" id="q-pip-4"><div class="lume-q-pilar-pip__dot">A</div><span class="lume-q-pilar-pip__label">Acompanhamento</span></div>
+          </nav>
+
+          <div class="lume-q-pilar-header">
+            <div class="lume-q-pilar-header__key" id="q-pilar-key">O</div>
+            <div class="lume-q-pilar-header__info">
+              <div class="lume-q-pilar-header__name" id="q-pilar-name">Organização</div>
+              <div class="lume-q-pilar-header__sub" id="q-pilar-sub">Clareza, prioridades e objetivos</div>
+            </div>
+            <div class="lume-q-pilar-header__count" id="q-pilar-count" aria-live="polite">1 de 4</div>
+          </div>
+
+          <div class="lume-q-card" id="q-main-card">
+            <div class="lume-q-text-wrap"><p class="lume-q-text" id="q-text" aria-live="polite"></p></div>
+            <div class="lume-scale-wrap">
+              <div class="lume-scale-endpoints" aria-hidden="true">
+                <span class="lume-scale-endpoint">Nunca</span>
+                <span class="lume-scale-endpoint">Sempre</span>
+              </div>
+              <div class="lume-scale" id="q-scale" role="group" aria-label="Escala de 1 a 5"></div>
+            </div>
+          </div>
+
+          <div class="lume-q-nav" id="q-nav">
+            <button type="button" class="lume-btn lume-btn--outline lume-btn--sm" id="q-btn-prev" onclick="LUME.App.prevQuestion()" style="visibility:hidden" aria-label="Pergunta anterior">← Anterior</button>
+            <span class="lume-q-nav__hint" aria-hidden="true">Escolha a opção que melhor descreve sua realidade</span>
+            <button type="button" class="lume-btn lume-btn--primary" id="q-btn-next" onclick="LUME.App.nextQuestion()" disabled>Próxima →</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /questionnaire -->
+
+    <!-- ══ STEP 4 — LOADING ══ -->
+    <div data-wizard-step="loading" class="lume-wizard__step">
+      <div class="lume-loading" role="status" aria-live="polite">
+
+        <div class="lume-loading__logo" aria-hidden="true">
+          <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 4v13h12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <h2 class="lume-loading__title">Analisando seu diagnóstico</h2>
+        <p class="lume-loading__subtitle">Preparando seu Relatório Executivo</p>
+
+        <div class="lume-loading__progress-wrap">
+          <div class="lume-loading__progress-track">
+            <div class="lume-loading__progress-fill" id="analysis-progress"></div>
+          </div>
+        </div>
+
+        <div class="lume-analysis-steps" id="analysis-steps" aria-live="polite"></div>
+
+      </div>
+    </div>
+    <!-- /loading -->
+
+    <!-- ══ STEP 5 — RESULT ══ -->
+    <div data-wizard-step="result" class="lume-wizard__step">
+      <div class="lume-result">
+        <div class="lume-result__inner">
+
+          <!-- CAPA DO RELATÓRIO -->
+          <div class="lume-report-cover lume-result-reveal" data-result-reveal>
+            <div class="lume-report-cover__brand">
+              <span class="lume-report-cover__brand-name">LUME™</span>
+              <span class="lume-report-cover__brand-sep">·</span>
+              <span class="lume-report-cover__brand-method">Método OPERA™</span>
+            </div>
+            <h1 class="lume-report-cover__title">Relatório Executivo</h1>
+            <div class="lume-report-cover__meta">
+              <div class="lume-report-cover__meta-row">
+                <span class="lume-report-cover__meta-label">Empresa</span>
+                <span class="lume-report-cover__meta-value" id="result-company">—</span>
+              </div>
+              <div class="lume-report-cover__meta-row">
+                <span class="lume-report-cover__meta-label">Responsável</span>
+                <span class="lume-report-cover__meta-value" id="result-responsible">—</span>
+              </div>
+              <div class="lume-report-cover__meta-row">
+                <span class="lume-report-cover__meta-label">Data</span>
+                <span class="lume-report-cover__meta-value" id="result-report-date">—</span>
+              </div>
+              <div class="lume-report-cover__meta-row">
+                <span class="lume-report-cover__meta-label">Instrumento</span>
+                <span class="lume-report-cover__meta-value" id="result-report-version">—</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NÍVEL DE EVOLUÇÃO -->
+          <div class="lume-result-hero lume-result-reveal" data-result-reveal>
+            <div class="lume-result-hero__inner">
+              <div class="lume-result-hero__info">
+                <div class="lume-result-hero__meta">
+                  <span class="lume-result-hero__meta-item">Diagnóstico OPERA™</span>
+                  <span class="lume-result-hero__meta-sep">·</span>
+                  <span class="lume-result-hero__meta-item" id="result-meta-version"></span>
+                </div>
+                <span class="lume-hero-eyebrow">Nível de Evolução</span>
+                <h2 class="lume-level-name" id="result-level-name">—</h2>
+                <p class="lume-level-desc" id="result-level-desc">—</p>
+                <div class="lume-result-hero__date-row">
+                  <span id="result-meta-date">—</span>
+                  <span class="lume-result-hero__meta-sep">·</span>
+                  <span id="result-meta-duration">—</span>
+                </div>
+              </div>
+              <div class="lume-level-ring-wrap" aria-label="Nível de evolução atual">
+                <div id="result-ring-svg"></div>
+                <div class="lume-ring-icon-center" aria-hidden="true">
+                  <span class="lume-ring-icon" id="result-level-icon">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERPRETAÇÃO DO NÍVEL -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow">
+              <span class="lume-result-card__title">Situação Atual</span>
+            </div>
+            <p class="lume-level-interpretation" id="result-level-interp"></p>
+          </div>
+
+          <!-- PRÓXIMO ESTÁGIO -->
+          <div class="lume-result-card lume-result-card--full lume-result-card--next-level lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow">
+              <span class="lume-result-card__title">Próximo Estágio</span>
+              <span class="lume-next-level__badge" id="result-next-level-name">—</span>
+            </div>
+            <p class="lume-next-level__hint" id="result-next-level-points">—</p>
+            <div id="result-next-bar"></div>
+          </div>
+
+          <!-- PONTOS FORTES / OPORTUNIDADES -->
+          <div class="lume-result-grid">
+            <div class="lume-result-card lume-result-card--highlight-good lume-result-reveal" data-result-reveal>
+              <span class="lume-result-card__title">Ponto Forte Principal</span>
+              <div class="lume-kpi-block">
+                <div class="lume-kpi-block__name" id="result-strength-name">—</div>
+                <div class="lume-kpi-block__score" id="result-strength-score">—</div>
+              </div>
+            </div>
+            <div class="lume-result-card lume-result-card--highlight-warn lume-result-reveal" data-result-reveal>
+              <span class="lume-result-card__title">Principal Oportunidade</span>
+              <div class="lume-kpi-block">
+                <div class="lume-kpi-block__name" id="result-gap-name">—</div>
+                <div class="lume-kpi-block__score lume-kpi-block__score--warn" id="result-gap-score">—</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EVOLUÇÃO POR DIMENSÃO + RADAR -->
+          <div class="lume-result-grid">
+            <div class="lume-result-card lume-result-reveal" data-result-reveal>
+              <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Evolução por dimensão</span></div>
+              <div class="lume-pilar-bars" id="result-pilar-bars"></div>
+            </div>
+            <div class="lume-result-card lume-result-reveal" data-result-reveal>
+              <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Mapa OPERA™</span></div>
+              <div class="lume-radar-wrap"><div id="result-radar"></div></div>
+            </div>
+          </div>
+
+          <!-- RESUMO EXECUTIVO -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Parecer Executivo</span></div>
+            <p class="lume-diagnosis" id="result-summary"></p>
+          </div>
+
+          <!-- ANÁLISE POR DIMENSÃO -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Análise por dimensão</span></div>
+            <div id="result-analysis"></div>
+          </div>
+
+          <!-- TRÊS PRIORIDADES -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Três prioridades de evolução</span></div>
+            <div id="result-priorities"></div>
+          </div>
+
+          <!-- PLANO INICIAL DE EVOLUÇÃO -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Plano Inicial de Evolução</span></div>
+            <div class="lume-evolution-plan" id="result-evolution-plan"></div>
+          </div>
+
+          <!-- PRÓXIMO OBJETIVO -->
+          <div class="lume-result-card lume-result-card--full lume-result-card--objective lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Próximo Objetivo</span></div>
+            <p class="lume-objective-text" id="result-next-objective"></p>
+          </div>
+
+          <!-- PRÓXIMA AVALIAÇÃO -->
+          <div class="lume-result-card lume-result-card--full lume-result-reveal" data-result-reveal>
+            <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Próxima Avaliação Recomendada</span></div>
+            <p class="lume-assessment-text" id="result-next-assessment"></p>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="lume-result-cta lume-result-reveal" data-result-reveal>
+            <div class="lume-result-cta__inner">
+              <span class="lume-result-cta__eyebrow">Continue sua evolução</span>
+              <h2 class="lume-result-cta__title">Este diagnóstico é uma fotografia<br>do seu negócio neste momento.</h2>
+              <p class="lume-result-cta__desc">Agora é hora de transformar esse diagnóstico em ação. O próximo passo é construir um plano estratégico de evolução — com foco, método e acompanhamento.</p>
+              <div class="lume-result-cta__bullets">
+                <span class="lume-result-cta__bullet">✓ Plano de ação por dimensão</span>
+                <span class="lume-result-cta__bullet">✓ Acompanhamento estratégico</span>
+                <span class="lume-result-cta__bullet">✓ Método OPERA™ aplicado</span>
+              </div>
+              <button type="button" class="lume-btn lume-btn--white lume-btn--xl" onclick="LUME.App.openWhatsApp()">
+                Quero construir meu Plano Estratégico
+                <span class="lume-btn__icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              </button>
+              <button type="button" class="lume-result-cta__restart" onclick="LUME.App.restart()">Fazer uma nova avaliação</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- /result -->
+  </div>
+  <!-- /lume-wizard -->
+
+
+  <!-- Live region para toast de acessibilidade -->
+  <div id="lume-toast-region" aria-live="assertive" aria-atomic="true" class="lume-sr-only"></div>
+
+  <!-- JavaScript — ordem obrigatória -->
+  <script src="js/config.js"></script>
+  <script src="js/tokens.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/diagnostic.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

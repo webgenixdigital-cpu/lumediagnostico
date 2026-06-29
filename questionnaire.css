@@ -1,0 +1,457 @@
+/* ============================================================
+   LUME OS — Questionnaire
+   UX premium para o Questionário OPERA™
+   ============================================================ */
+
+/* ── CONTAINER ──────────────────────────── */
+.lume-questionnaire {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding-top: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.lume-questionnaire__inner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+  margin-inline: auto;
+  width: 100%;
+  padding: var(--space-8) var(--space-6) var(--space-12);
+}
+
+/* ── PROGRESS ───────────────────────────── */
+.lume-q-progress {
+  margin-bottom: var(--space-8);
+}
+
+.lume-q-progress__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.lume-q-progress__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.lume-q-progress__num {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  letter-spacing: var(--tracking-wide);
+}
+
+.lume-q-progress__track {
+  height: 3px;
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.lume-q-progress__fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  width: 0%;
+  position: relative;
+}
+
+/* Efeito shimmer no progresso */
+.lume-q-progress__fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 1.5s ease infinite;
+  background-size: 200% 100%;
+}
+
+/* ── PILAR TRACKER ──────────────────────── */
+.lume-q-pilar-track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.lume-q-pilar-pip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  cursor: default;
+}
+
+.lume-q-pilar-pip__dot {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  transition: all 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+.lume-q-pilar-pip__label {
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  transition: color 300ms;
+}
+
+/* Linha entre pips */
+.lume-q-pilar-pip + .lume-q-pilar-sep {
+  width: 24px;
+  height: 1px;
+  background: var(--color-border);
+  flex-shrink: 0;
+  transition: background 400ms;
+}
+
+/* Estados */
+.lume-q-pilar-pip.is-done .lume-q-pilar-pip__dot {
+  background: rgba(31,61,52,0.06);
+  border-color: rgba(31,61,52,0.2);
+  color: var(--color-primary);
+}
+
+.lume-q-pilar-pip.is-done + .lume-q-pilar-sep {
+  background: rgba(31,61,52,0.2);
+}
+
+.lume-q-pilar-pip.is-active .lume-q-pilar-pip__dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(31,61,52,0.1);
+}
+
+.lume-q-pilar-pip.is-active .lume-q-pilar-pip__label {
+  color: var(--color-primary);
+}
+
+/* ── PILAR HEADER ───────────────────────── */
+.lume-q-pilar-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(31,61,52,0.04);
+  border: 1px solid rgba(31,61,52,0.08);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-6);
+  transition: all 400ms;
+}
+
+.lume-q-pilar-header__key {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wide);
+  flex-shrink: 0;
+}
+
+.lume-q-pilar-header__info {}
+
+.lume-q-pilar-header__name {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.lume-q-pilar-header__sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.lume-q-pilar-header__count {
+  margin-left: auto;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 2px 10px;
+}
+
+/* ── QUESTION ───────────────────────────── */
+.lume-q-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.lume-q-text-wrap {
+  flex: 1;
+  margin-bottom: var(--space-10);
+  min-height: 100px;
+}
+
+.lume-q-text {
+  font-size: clamp(var(--text-lg), 2.4vw, var(--text-2xl));
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Animações de transição de pergunta */
+@keyframes slideOutLeft {
+  to { opacity: 0; transform: translateX(-24px); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.lume-q-text.is-exiting {
+  animation: slideOutLeft 180ms ease both;
+}
+
+.lume-q-text.is-entering {
+  animation: slideInRight 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── SCALE ──────────────────────────────── */
+.lume-scale-wrap {
+  margin-bottom: var(--space-10);
+}
+
+.lume-scale-endpoints {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+  padding-inline: 2px;
+}
+
+.lume-scale-endpoint {
+  font-size: 11px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.lume-scale {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-2);
+}
+
+.lume-scale-btn {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition:
+    background  200ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform   200ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow  200ms cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: var(--font-sans);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ripple ao clicar */
+.lume-scale-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(31,61,52,0.06);
+  opacity: 0;
+  transition: opacity 150ms;
+  border-radius: inherit;
+}
+
+.lume-scale-btn:hover {
+  border-color: rgba(31,61,52,0.3);
+  background: rgba(31,61,52,0.02);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.lume-scale-btn:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+.lume-scale-btn:active::after {
+  opacity: 1;
+}
+
+.lume-scale-btn.is-selected {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(31,61,52,0.25);
+}
+
+.lume-scale-btn__num {
+  font-size: clamp(20px, 3.5vw, 28px);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-secondary);
+  line-height: 1;
+  transition: color 200ms;
+}
+
+.lume-scale-btn.is-selected .lume-scale-btn__num {
+  color: white;
+}
+
+.lume-scale-btn__label {
+  font-size: 9px;
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+  transition: color 200ms;
+  line-height: 1.2;
+}
+
+.lume-scale-btn.is-selected .lume-scale-btn__label {
+  color: rgba(255,255,255,0.65);
+}
+
+/* ── NAVEGAÇÃO ──────────────────────────── */
+.lume-q-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.lume-q-nav__hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  flex: 1;
+}
+
+/* ── MILESTONE TOAST ─────────────────────── */
+.lume-milestone {
+  position: fixed;
+  bottom: var(--space-8);
+  left: 50%;
+  transform: translateX(-50%) translateY(16px);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-full);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  z-index: var(--z-toast);
+  opacity: 0;
+  transition:
+    opacity 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(31,61,52,0.3);
+}
+
+.lume-milestone.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 640px) {
+  .lume-questionnaire__inner { padding: var(--space-5) var(--space-4) var(--space-10); }
+  .lume-q-text { font-size: var(--text-lg); }
+  .lume-scale { gap: var(--space-1); }
+  .lume-scale-btn { border-radius: var(--radius-lg); }
+  .lume-scale-btn__label { display: none; }
+  .lume-q-pilar-pip__label { display: none; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+/* ═══ RC1 — Scale button focus + Nav hint refinement ═══ */
+.lume-scale-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  z-index: 1;
+}
+
+.lume-scale-btn.is-selected:focus-visible {
+  outline-color: white;
+  box-shadow: 0 0 0 4px rgba(31,61,52,0.3);
+}
+
+/* Nav hint — ocultar após seleção */
+.lume-q-nav__hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  flex: 1;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+}
+
+/* Pilar header — melhor contraste mobile */
+@media (max-width: 480px) {
+  .lume-q-pilar-header {
+    padding: var(--space-3) var(--space-3);
+    gap: var(--space-2);
+  }
+  .lume-q-pilar-header__key {
+    width: 24px; height: 24px;
+    font-size: 10px;
+  }
+  .lume-q-pilar-header__count {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+}
+
+/* Scale button — min-height para toque confortável */
+.lume-scale-btn {
+  min-height: 72px;
+}
+
+@media (max-width: 380px) {
+  .lume-scale-btn { min-height: 60px; }
+  .lume-scale-btn__num { font-size: var(--text-lg); }
+}

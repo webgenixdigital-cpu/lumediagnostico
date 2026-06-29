@@ -1,0 +1,134 @@
+/* ============================================================
+   LUME OS — Helpers
+   Classes utilitárias com prefixo lume-.
+   Evitam repetição de CSS nos módulos específicos.
+   ============================================================ */
+
+
+/* ── DISPLAY ────────────────────────────────────────────────── */
+.lume-hidden         { display: none !important; }
+.lume-visible        { display: block !important; }
+.lume-flex           { display: flex; }
+.lume-flex-col       { display: flex; flex-direction: column; }
+.lume-grid           { display: grid; }
+.lume-inline         { display: inline; }
+.lume-inline-flex    { display: inline-flex; }
+.lume-inline-block   { display: inline-block; }
+
+
+/* ── FLEX ───────────────────────────────────────────────────── */
+.lume-items-start    { align-items: flex-start; }
+.lume-items-center   { align-items: center; }
+.lume-items-end      { align-items: flex-end; }
+.lume-items-stretch  { align-items: stretch; }
+.lume-justify-start  { justify-content: flex-start; }
+.lume-justify-center { justify-content: center; }
+.lume-justify-end    { justify-content: flex-end; }
+.lume-justify-between{ justify-content: space-between; }
+.lume-wrap           { flex-wrap: wrap; }
+.lume-shrink-0       { flex-shrink: 0; }
+.lume-grow           { flex-grow: 1; }
+
+
+/* ── SPACING — MARGIN TOP ───────────────────────────────────── */
+.mt-xs   { margin-top: var(--space-1); }
+.mt-sm   { margin-top: var(--space-3); }
+.mt-md   { margin-top: var(--space-6); }
+.mt-lg   { margin-top: var(--space-12); }
+.mt-xl   { margin-top: var(--space-20); }
+
+
+/* ── SPACING — MARGIN BOTTOM ────────────────────────────────── */
+.mb-xs   { margin-bottom: var(--space-1); }
+.mb-sm   { margin-bottom: var(--space-3); }
+.mb-md   { margin-bottom: var(--space-6); }
+.mb-lg   { margin-bottom: var(--space-12); }
+.mb-xl   { margin-bottom: var(--space-20); }
+
+
+/* ── SPACING — GAP ──────────────────────────────────────────── */
+.lume-gap-xs  { gap: var(--space-2); }
+.lume-gap-sm  { gap: var(--space-3); }
+.lume-gap-md  { gap: var(--space-6); }
+.lume-gap-lg  { gap: var(--space-8); }
+.lume-gap-xl  { gap: var(--space-12); }
+
+
+/* ── WIDTH / HEIGHT ─────────────────────────────────────────── */
+.w-full   { width: 100%; }
+.h-full   { height: 100%; }
+.w-auto   { width: auto; }
+
+
+/* ── TEXT ALIGN ─────────────────────────────────────────────── */
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+
+/* ── TEXT TRANSFORM ─────────────────────────────────────────── */
+.lume-uppercase  { text-transform: uppercase; }
+.lume-lowercase  { text-transform: lowercase; }
+.lume-capitalize { text-transform: capitalize; }
+
+
+/* ── BORDER RADIUS ──────────────────────────────────────────── */
+.lume-rounded-sm   { border-radius: var(--radius-sm); }
+.lume-rounded-md   { border-radius: var(--radius-md); }
+.lume-rounded-lg   { border-radius: var(--radius-lg); }
+.lume-rounded-xl   { border-radius: var(--radius-xl); }
+.lume-rounded-full { border-radius: var(--radius-full); }
+
+
+/* ── OVERFLOW ───────────────────────────────────────────────── */
+.lume-overflow-hidden { overflow: hidden; }
+.lume-overflow-auto   { overflow: auto; }
+
+
+/* ── POSITION ───────────────────────────────────────────────── */
+.lume-relative { position: relative; }
+.lume-absolute { position: absolute; }
+.lume-fixed    { position: fixed; }
+.lume-sticky   { position: sticky; }
+
+
+/* ── CURSOR ─────────────────────────────────────────────────── */
+.lume-pointer  { cursor: pointer; }
+.lume-default  { cursor: default; }
+
+
+/* ── DIVIDER ────────────────────────────────────────────────── */
+.lume-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin-block: var(--space-6);
+}
+
+
+/* ── SCREEN READER ONLY ─────────────────────────────────────── */
+.lume-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+
+/* ── MAX WIDTH ──────────────────────────────────────────────── */
+.lume-max-sm  { max-width: var(--container-sm); margin-inline: auto; }
+.lume-max-md  { max-width: var(--container-md); margin-inline: auto; }
+.lume-max-lg  { max-width: var(--container-lg); margin-inline: auto; }
+
+
+/* ── SURFACE ────────────────────────────────────────────────── */
+.lume-surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}

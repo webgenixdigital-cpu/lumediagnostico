@@ -1,0 +1,386 @@
+/* ============================================================
+   LUME OS — Identification
+   Estilos exclusivos da Tela de Identificação.
+   ============================================================ */
+
+
+/* ── WIZARD BASE ────────────────────────────────────────────── */
+.lume-wizard {
+  min-height: 100vh;
+}
+
+.lume-wizard__step {
+  display: none;
+}
+
+.lume-wizard__step.is-active {
+  display: block;
+}
+
+.lume-wizard__step.is-animating {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+
+/* ── STEP INDICATOR ─────────────────────────────────────────── */
+.lume-step-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-10);
+}
+
+.lume-step-indicator__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+}
+
+.lume-step-indicator__item.is-active {
+  color: var(--color-primary);
+}
+
+.lume-step-indicator__item.is-done {
+  color: var(--color-text-muted);
+}
+
+.lume-step-indicator__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: all var(--transition-base);
+}
+
+.lume-step-indicator__item.is-active .lume-step-indicator__dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.lume-step-indicator__item.is-done .lume-step-indicator__dot {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.lume-step-indicator__line {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+  max-width: 48px;
+}
+
+
+/* ── IDENTIFICATION LAYOUT ──────────────────────────────────── */
+.lume-identification {
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding-top: var(--nav-height);
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--space-16);
+}
+
+.lume-identification__inner {
+  width: 100%;
+  padding-block: var(--space-16);
+}
+
+.lume-identification__header {
+  margin-bottom: var(--space-12);
+}
+
+.lume-identification__eyebrow {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.lume-identification__title {
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.lume-identification__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 480px;
+}
+
+
+/* ── FORM ───────────────────────────────────────────────────── */
+.lume-form {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-sm);
+}
+
+.lume-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+.lume-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.lume-form__group--full {
+  grid-column: 1 / -1;
+}
+
+.lume-form__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.lume-form__label--required::after {
+  content: ' *';
+  color: var(--color-accent);
+}
+
+.lume-form__input,
+.lume-form__select {
+  width: 100%;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  outline: none;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.lume-form__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.lume-form__input:focus,
+.lume-form__select:focus {
+  border-color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 3px rgba(31, 61, 52, 0.08);
+}
+
+/* Validação visual */
+.lume-form__input.is-error,
+.lume-form__select.is-error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.08);
+}
+
+.lume-form__input.is-valid,
+.lume-form__select.is-valid {
+  border-color: var(--color-success);
+}
+
+.lume-form__error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  font-weight: var(--weight-medium);
+  display: none;
+}
+
+.lume-form__error.is-visible {
+  display: block;
+}
+
+/* Select customizado */
+.lume-form__select-wrapper {
+  position: relative;
+}
+
+.lume-form__select-wrapper::after {
+  content: '';
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--color-text-muted);
+  pointer-events: none;
+}
+
+.lume-form__select {
+  cursor: pointer;
+  padding-right: var(--space-10);
+}
+
+.lume-form__select option {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+
+/* ── FORM DIVIDER ───────────────────────────────────────────── */
+.lume-form__divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: var(--color-border);
+  margin-block: var(--space-2);
+}
+
+
+/* ── FORM FOOTER ────────────────────────────────────────────── */
+.lume-form__footer {
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.lume-form__footer-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  max-width: 280px;
+}
+
+.lume-form__footer-note strong {
+  color: var(--color-text-secondary);
+}
+
+
+/* ── BACK LINK ──────────────────────────────────────────────── */
+.lume-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: var(--weight-medium);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: var(--space-8);
+}
+
+.lume-back-link:hover {
+  color: var(--color-text);
+}
+
+.lume-back-link svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* ── RESPONSIVE ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .lume-form {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .lume-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lume-form__group--full {
+    grid-column: 1;
+  }
+
+  .lume-form__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lume-step-indicator__item span {
+    display: none;
+  }
+}
+
+/* ═══ RC1 — Form refinements ═══ */
+
+/* Label asterisk mais sutil */
+.lume-form__label--required::after {
+  content: ' *';
+  color: var(--color-accent);
+  font-size: 10px;
+}
+
+/* Input válido — tick sutil */
+.lume-form__input.is-valid,
+.lume-form__select.is-valid {
+  border-color: var(--color-success);
+  background: rgba(46,139,87,0.02);
+}
+
+/* Error message — animação de entrada */
+.lume-form__error {
+  animation: none;
+}
+.lume-form__error.is-visible {
+  animation: fadeInUp 200ms ease both;
+}
+
+/* Step indicator — melhor contraste no active */
+.lume-step-indicator__item.is-active .lume-step-indicator__dot {
+  box-shadow: 0 0 0 3px rgba(31,61,52,0.12);
+}
+
+/* Form CTA — full width mobile */
+@media (max-width: 480px) {
+  .lume-form__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .lume-form__footer .lume-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .lume-form__footer-note {
+    max-width: 100%;
+    text-align: center;
+  }
+}
