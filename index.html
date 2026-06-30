@@ -2887,7 +2887,6 @@ body {
   background: var(--color-primary);
   border-radius: var(--radius-2xl);
   padding: var(--space-10) var(--space-10);
-  margin-bottom: var(--space-5);
   position: relative;
   overflow: hidden;
 }
@@ -3028,7 +3027,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4);
-  margin-bottom: var(--space-4);
 }
 
 .lume-result-card {
@@ -3046,6 +3044,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   margin-bottom: var(--space-6);
 }
 
@@ -3283,7 +3283,6 @@ body {
   border-radius: var(--radius-2xl);
   padding: var(--space-12);
   text-align: center;
-  margin-top: var(--space-4);
   position: relative;
   overflow: hidden;
 }
@@ -3364,6 +3363,7 @@ body {
   .lume-result-hero__inner { grid-template-columns: 1fr; text-align: center; }
   .lume-score-ring-wrap { margin-inline: auto; width: 120px; height: 120px; }
   .lume-result-grid { grid-template-columns: 1fr; }
+  .lume-result-card { padding: var(--space-5) var(--space-5); }
   .lume-result-card--full { grid-column: 1; }
   .lume-action-cols { grid-template-columns: 1fr; }
   .lume-result-cta { padding: var(--space-8) var(--space-5); }
@@ -3419,7 +3419,7 @@ body {
 }
 
 .lume-kpi-block {
-  margin-top: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .lume-kpi-block__name {
@@ -3797,6 +3797,8 @@ body {
 .lume-result-card--recommendation {
   background: linear-gradient(135deg, rgba(200,155,60,.04) 0%, rgba(31,61,52,.03) 100%);
   border-color: rgba(200,155,60,.2);
+  position: relative;
+  overflow: hidden;
 }
 .lume-recommendation-text {
   font-size: var(--text-base);
@@ -3830,9 +3832,23 @@ body {
 
 /* ═══ RC1 — Refinamentos visuais do resultado ═══ */
 
-/* Espaçamento consistente entre cards */
+/* ── RITMO VERTICAL EDITORIAL ────────────
+   Hierarquia intencional de espaçamento:
+   capa + hero mais colados (par. título)
+   corpo do relatório com ritmo consistente
+   CTA final com respiro de encerramento  */
 .lume-result__inner > * + * {
-  margin-top: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+/* Capa → Nível de Evolução: leitura contínua da abertura */
+.lume-result-hero {
+  margin-top: var(--space-3) !important;
+}
+
+/* Fechamento do relatório: separação clara antes do CTA */
+.lume-result-cta {
+  margin-top: var(--space-10) !important;
 }
 
 /* Score ring — borda interior mais limpa */
@@ -3874,10 +3890,7 @@ body {
   .lume-result-cta__title { font-size: var(--text-xl); }
 }
 
-/* Result card sections — consistent gap */
-.lume-result-grid + .lume-result-grid {
-  margin-top: var(--space-4);
-}
+/* (espaçamento entre grids já coberto pelo ritmo vertical unificado acima) */
 
 /* Recommendation card — visual left accent */
 .lume-result-card--recommendation::before {
@@ -3888,10 +3901,6 @@ body {
   height: 100%;
   background: var(--color-accent);
   border-radius: var(--radius-xl) 0 0 var(--radius-xl);
-}
-.lume-result-card--recommendation {
-  position: relative;
-  overflow: hidden;
 }
 
 /* Restart button — melhor visibilidade */
@@ -3916,7 +3925,6 @@ body {
   background: var(--color-primary);
   border-radius: var(--radius-2xl);
   padding: var(--space-10) var(--space-12);
-  margin-bottom: var(--space-4);
   position: relative;
   overflow: hidden;
 }
@@ -4280,6 +4288,9 @@ body {
   background: linear-gradient(135deg, rgba(31,61,52,0.04) 0%, rgba(31,61,52,0.01) 100%);
   border-color: rgba(31,61,52,0.15);
   border-left: 3px solid var(--color-primary);
+  /* compensa os 2px extras da borda esquerda (3px vs 1px padrão)
+     para o texto alinhar com o mesmo eixo vertical dos demais cards */
+  padding-left: calc(var(--space-8) - 2px);
 }
 
 .lume-objective-text {
@@ -5014,14 +5025,14 @@ body {
           <!-- PONTOS FORTES / OPORTUNIDADES -->
           <div class="lume-result-grid">
             <div class="lume-result-card lume-result-card--highlight-good lume-result-reveal" data-result-reveal>
-              <span class="lume-result-card__title">Ponto Forte Principal</span>
+              <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Ponto Forte Principal</span></div>
               <div class="lume-kpi-block">
                 <div class="lume-kpi-block__name" id="result-strength-name">—</div>
                 <div class="lume-kpi-block__score" id="result-strength-score">—</div>
               </div>
             </div>
             <div class="lume-result-card lume-result-card--highlight-warn lume-result-reveal" data-result-reveal>
-              <span class="lume-result-card__title">Principal Oportunidade</span>
+              <div class="lume-result-card__eyebrow"><span class="lume-result-card__title">Principal Oportunidade</span></div>
               <div class="lume-kpi-block">
                 <div class="lume-kpi-block__name" id="result-gap-name">—</div>
                 <div class="lume-kpi-block__score lume-kpi-block__score--warn" id="result-gap-score">—</div>
