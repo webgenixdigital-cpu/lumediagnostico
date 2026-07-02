@@ -4639,6 +4639,173 @@ body.lume-is-printing #lume-print-area { display: block; }
 
 .lume-print-section--books { page-break-inside: avoid; }
 
+/* ══════════════════════════════════════════
+   RESPONSIVO — Correções gerais do resultado
+   Auditado para desktop, tablet e smartphone
+══════════════════════════════════════════ */
+
+/* ── DESKTOP (base já ok) ─────────────── */
+.lume-result__inner {
+  padding-bottom: var(--space-16);
+}
+
+/* ── TABLET 768px ─────────────────────── */
+@media (max-width: 768px) {
+
+  /* Report cover */
+  .lume-report-cover {
+    padding: var(--space-8) var(--space-6);
+    border-radius: var(--radius-xl);
+  }
+  .lume-report-cover__title { font-size: 1.35rem; }
+  .lume-report-cover__meta { grid-template-columns: 1fr 1fr; gap: var(--space-3) var(--space-5); }
+
+  /* Hero nível */
+  .lume-result-hero {
+    border-radius: var(--radius-xl);
+    padding: var(--space-7) var(--space-6);
+  }
+  .lume-level-ring-wrap { width: 110px; height: 110px; }
+  .lume-ring-icon { font-size: 2rem; }
+
+  /* Cards */
+  .lume-result-card { padding: var(--space-5) var(--space-6); border-radius: var(--radius-xl); }
+
+  /* Próximo estágio */
+  .lume-next-level__hint { font-size: var(--text-sm); }
+
+  /* Livros — 2 colunas em tablet */
+  .lume-books-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Checklist CTA */
+  .lume-checklist-cta { padding: var(--space-5) var(--space-5); }
+  .lume-checklist-cta__inner { gap: var(--space-4); }
+
+  /* CTA final */
+  .lume-result-cta {
+    padding: var(--space-10) var(--space-8);
+    border-radius: var(--radius-xl);
+  }
+  .lume-result-cta__title { font-size: var(--text-xl); max-width: 100%; }
+  .lume-result-cta__desc  { font-size: var(--text-sm); max-width: 100%; }
+  .lume-result-cta__bullets { gap: var(--space-2); margin-bottom: var(--space-6); }
+  .lume-result-cta .lume-btn--xl {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-base);
+    justify-content: center;
+  }
+}
+
+/* ── SMARTPHONE 480px ─────────────────── */
+@media (max-width: 480px) {
+
+  .lume-result__inner { padding-inline: var(--space-4); }
+
+  /* Cover */
+  .lume-report-cover {
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+  .lume-report-cover::after { display: none; }
+  .lume-report-cover__title { font-size: 1.15rem; margin-bottom: var(--space-5); }
+  .lume-report-cover__meta { grid-template-columns: 1fr; gap: var(--space-2); }
+  .lume-report-cover__meta-value { font-size: var(--text-sm); }
+
+  /* Hero */
+  .lume-result-hero { padding: var(--space-6) var(--space-5); border-radius: var(--radius-lg); }
+  .lume-level-ring-wrap { width: 96px; height: 96px; }
+  .lume-ring-icon { font-size: 1.75rem; }
+  .lume-level-name { font-size: var(--text-xl); }
+  .lume-level-desc { font-size: var(--text-xs); }
+  .lume-result-hero__meta-item { font-size: 10px; }
+  .lume-result-hero__date-row { font-size: 10px; gap: var(--space-1); }
+
+  /* Cards */
+  .lume-result-card { padding: var(--space-5) var(--space-4); border-radius: var(--radius-lg); }
+  .lume-result-card__eyebrow { margin-bottom: var(--space-4); }
+  .lume-result-grid { gap: var(--space-3); }
+
+  /* KPI cards (força/gargalo) */
+  .lume-kpi-block__name { font-size: var(--text-lg); }
+  .lume-kpi-block__score { font-size: var(--text-xs); }
+
+  /* Barras de pilar */
+  .lume-pilar-bar__score { font-size: var(--text-xs); }
+
+  /* Interpretações */
+  .lume-interp-item__header { flex-wrap: wrap; gap: var(--space-2); }
+
+  /* Prioridades */
+  .lume-priority-item { padding: var(--space-3) var(--space-4); }
+  .lume-priority-item__name { font-size: var(--text-sm); }
+
+  /* Plano de evolução */
+  .lume-evolution-item { padding: var(--space-3) var(--space-4); gap: var(--space-3); }
+  .lume-evolution-item__text { font-size: var(--text-xs); }
+
+  /* Objetivo / Avaliação */
+  .lume-objective-text  { font-size: var(--text-sm); }
+  .lume-assessment-text { font-size: var(--text-sm); }
+
+  /* Livros — 1 coluna */
+  .lume-books-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+  .lume-book-item { padding: var(--space-3); }
+
+  /* Checklist CTA */
+  .lume-checklist-cta { padding: var(--space-4); border-radius: var(--radius-lg); }
+  .lume-checklist-cta__inner { flex-direction: column; gap: var(--space-3); align-items: flex-start; }
+  .lume-checklist-cta__title { font-size: var(--text-sm); }
+  .lume-checklist-cta__desc  { font-size: var(--text-xs); }
+  .lume-checklist-cta .lume-btn { width: 100%; justify-content: center; }
+
+  /* CTA FINAL — o principal problema em smartphone */
+  .lume-result-cta {
+    padding: var(--space-8) var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+  .lume-result-cta__eyebrow { font-size: 10px; margin-bottom: var(--space-3); }
+  .lume-result-cta__title {
+    font-size: var(--text-lg);
+    max-width: 100%;
+    margin-bottom: var(--space-3);
+  }
+  .lume-result-cta__desc {
+    font-size: var(--text-sm);
+    max-width: 100%;
+    margin-bottom: var(--space-5);
+  }
+  .lume-result-cta__bullets {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-6);
+  }
+  .lume-result-cta__bullet { font-size: var(--text-xs); }
+  /* Botão principal — largura total, sem overflow */
+  .lume-result-cta .lume-btn--white {
+    width: 100%;
+    padding: var(--space-4) var(--space-4);
+    font-size: var(--text-sm);
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+    min-height: 48px;
+  }
+  .lume-result-cta .lume-btn__icon { display: none; }
+  .lume-result-cta__restart { font-size: var(--text-xs); margin-top: var(--space-4); }
+}
+
+/* ── MUITO PEQUENO 360px ──────────────── */
+@media (max-width: 360px) {
+  .lume-result__inner { padding-inline: var(--space-3); }
+  .lume-result-card  { padding: var(--space-4) var(--space-3); }
+  .lume-result-cta   { padding: var(--space-6) var(--space-4); }
+  .lume-result-hero  { padding: var(--space-5) var(--space-4); }
+  .lume-report-cover { padding: var(--space-5) var(--space-4); }
+}
+
 /* ============================================================
    LUME OS — Responsive
    Breakpoints e adaptações para diferentes viewports
@@ -6972,18 +7139,62 @@ LUME.App = {
     addSec('Pr\u00f3xima Avalia\u00e7\u00e3o Recomendada');
     addBody(result.ieeBand.nextAssessment||'');
 
-    /* LIVROS */
-    addSec('Leitura Recomendada');
+    /* LIVROS \u2014 sempre na segunda p\u00E1gina */
+    doc.addPage();
+    y = margin;
+
+    addSec('Leitura Recomendada para o Seu N\u00edvel');
+    doc.setFontSize(9); doc.setFont('helvetica','normal'); sColor(C_MUT);
+    doc.text(result.ieeBand.level, margin, y); y += 8;
+
     books.forEach(function(b) {
-      chkPg(18);
+      chkPg(20);
+      /* Mini card: linha de fundo */
+      sFill([245,245,243]);
+      doc.roundedRect(margin, y-4, cW, 17, 1.5, 1.5, 'F');
       doc.setFontSize(10); doc.setFont('helvetica','bold'); sColor(C_TXT);
-      doc.text(b.title, margin, y); y += 4.5;
+      doc.text(b.title, margin+4, y+1); y += 5;
       doc.setFontSize(8.5); doc.setFont('helvetica','bold'); sColor(C_ACC);
-      doc.text(b.author, margin, y); y += 4;
+      doc.text(b.author, margin+4, y+1); y += 4.5;
       doc.setFontSize(8.5); doc.setFont('helvetica','normal'); sColor(C_MUT);
-      var dL = doc.splitTextToSize(b.desc, cW);
-      doc.text(dL, margin, y); y += dL.length*4.5 + 5;
+      var dL = doc.splitTextToSize(b.desc, cW-8);
+      doc.text(dL, margin+4, y+1); y += dL.length*4 + 7;
     });
+
+    /* CTA WHATSAPP \u2014 bloco final na \u00FAltima p\u00E1gina */
+    chkPg(52);
+    /* Se sobrar menos de 52mm na p\u00E1gina, nova p\u00E1gina */
+    if (y > 235) { doc.addPage(); y = margin; }
+    else { y += 8; }
+
+    var wppMsg = encodeURIComponent(
+      'Ol\u00e1! Acabei de fazer o Diagn\u00f3stico OPERA\u2122 pelo LUME OS.' +
+      '\n\nEmpresa: ' + (id.company||id.name||'') +
+      '\nN\u00edvel: ' + result.ieeBand.level +
+      '\n\nQuero conversar sobre meu plano de evolu\u00e7\u00e3o.'
+    );
+    var wppUrl = 'https://wa.me/5535987096476?text=' + wppMsg;
+
+    /* Bloco de frase impactante */
+    doc.setFontSize(9.5); doc.setFont('helvetica','normal'); sColor([80,80,80]);
+    var frase = 'Voc\u00ea n\u00e3o precisa estar sozinho na execu\u00e7\u00e3o de tudo. ' +
+      'Conte com a equipe LUME OS para progredir de m\u00e3os dadas em busca dos resultados desejados.';
+    var fraseLines = doc.splitTextToSize(frase, cW);
+    doc.text(fraseLines, pageW/2, y, {align:'center'});
+    y += fraseLines.length*5 + 4;
+
+    doc.setFontSize(8.5); doc.setFont('helvetica','italic'); sColor(C_MUT);
+    doc.text('Clique no bot\u00e3o abaixo e fale com nosso time.', pageW/2, y, {align:'center'});
+    y += 10;
+
+    /* Bot\u00E3o WhatsApp */
+    var btnW = 80, btnH = 12, btnX = pageW/2 - btnW/2;
+    sFill([37,211,102]); /* verde WhatsApp */
+    doc.roundedRect(btnX, y, btnW, btnH, 3, 3, 'F');
+    doc.setFontSize(10); doc.setFont('helvetica','bold'); sColor([255,255,255]);
+    doc.text('\u2197  Falar com a equipe LUME OS', pageW/2, y+7.5, {align:'center'});
+    doc.link(btnX, y, btnW, btnH, {url: wppUrl});
+    y += 20;
 
     /* RODAP\u00c9 */
     var total = doc.internal.getNumberOfPages();
