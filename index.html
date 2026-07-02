@@ -4455,6 +4455,179 @@ body {
   .lume-checklist-cta { padding: var(--space-5); }
 }
 
+/* ══════════════════════════════════════════
+   @media print — Checklist PDF
+   Oculta tudo, exibe só #lume-print-area
+══════════════════════════════════════════ */
+
+@media print {
+  /* Oculta toda a interface */
+  body > *:not(#lume-print-area) { display: none !important; }
+  body { background: white !important; margin: 0; padding: 0; }
+  #lume-print-area { display: block !important; }
+  @page { margin: 16mm; size: A4; }
+}
+
+/* Classe que ativa a área de impressão na tela durante window.print() */
+body.lume-is-printing #lume-print-area { display: block; }
+
+/* ── ESTILOS DO DOCUMENTO IMPRESSO ──── */
+.lume-print-doc {
+  display: none; /* oculto na tela normal, visible no @media print */
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #1a1a1a;
+  max-width: 640px;
+}
+
+@media print {
+  .lume-print-doc { display: block; }
+}
+
+.lume-print-header {
+  border-bottom: 2px solid #1F3D34;
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.lume-print-brand {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.lume-print-company {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1F3D34;
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.lume-print-meta {
+  font-size: 11px;
+  color: #888;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.lume-print-level {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.lume-print-level-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.lume-print-level-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1F3D34;
+  background: rgba(31,61,52,.07);
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+.lume-print-section {
+  margin-bottom: 24px;
+}
+
+.lume-print-section h2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1F3D34;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  margin: 0 0 10px;
+  padding-bottom: 5px;
+  border-bottom: 1.5px solid #1F3D34;
+}
+
+.lume-print-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lume-print-section li {
+  margin-bottom: 9px;
+}
+
+.lume-print-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.lume-print-box {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid #1F3D34;
+  border-radius: 2px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lume-print-text {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lume-print-text--italic { font-style: italic; }
+
+.lume-print-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.lume-print-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  color: #333;
+  line-height: 1.5;
+}
+
+.lume-print-table tr:last-child td { border-bottom: none; }
+
+.lume-print-author {
+  color: #C89B3C;
+  font-size: 10px;
+  font-weight: 700;
+  display: block;
+  margin-top: 1px;
+}
+
+.lume-print-footer {
+  margin-top: 32px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  font-size: 10px;
+  color: #aaa;
+  text-align: center;
+}
+
+.lume-print-section--books { page-break-inside: avoid; }
+
 /* ============================================================
    LUME OS — Responsive
    Breakpoints e adaptações para diferentes viewports
@@ -5690,6 +5863,184 @@ LUME.Diagnostic = {
     A: 'Defina os 3 indicadores que voc\u00EA vai acompanhar semanalmente e reserve 1 hora toda semana para analis\u00E1-los.',
   },
 
+
+  /* \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+     CONTE\u00DADO PERSONALIZADO POR SEGMENTO
+     Primeiros passos, recomenda\u00E7\u00F5es e planos de evolu\u00E7\u00E3o
+     adaptados para cada ramo de atua\u00E7\u00E3o.
+  \u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550 */
+  _segmentContent: {
+
+    salao: {
+      firstSteps: {
+        O: ['Defina os 3 servicos com maior margem do salao e priorize a agenda em torno deles.', 'Estabeleca metas mensais de faturamento por servico e por profissional.', 'Crie uma reuniao semanal de 15 minutos com a equipe toda segunda-feira.'],
+        P: ['Crie um protocolo de atendimento padrao: recepcao, consulta, execucao do servico e pos.', 'Elabore fichas tecnicas dos principais servicos com tempo estimado, produtos e valor.', 'Implante um checklist de abertura e fechamento do salao.'],
+        E: ['Implante um sistema de agendamento online para reduzir ligacoes e faltas.', 'Separe o caixa do salao das financas pessoais e implante controle de caixa diario.', 'Organize o estoque com ponto de reposicao definido para os produtos mais usados.'],
+        R: ['Implante mensagem automatica de confirmacao 24h antes e agradecimento 24h apos cada visita.', 'Crie um programa de fidelidade simples: a cada 8 visitas, um servico com desconto.', 'Peca avaliacoes no Google para os 10 clientes mais fieis do salao.'],
+        A: ['Acompanhe toda semana: total de atendimentos, ticket medio e taxa de retorno em 30 dias.', 'Reserve 30 minutos toda segunda-feira para revisar os numeros da semana anterior.', 'Compare mensalmente a receita por servico e por profissional para identificar oportunidades.'],
+      },
+      recommendations: {
+        O: 'Comece esta semana listando os 3 servicos com maior margem de lucro do seu salao. Coloque na parede da recepcao, compartilhe com a equipe e ajuste a agenda para prioriz\u00E1-los.',
+        P: 'Escreva o passo a passo do seu atendimento padrao \u2014 da recepcao a despedida. Transforme em checklist e pe\u00E7a a cada profissional que siga por 30 dias. Os resultados vao aparecer no retorno dos clientes.',
+        E: 'Implante um aplicativo de agendamento online ainda esta semana. Clientes que agendam pelo celular faltam menos e o salao fica mais organizado sem depender de ligacoes.',
+        R: 'Implante uma mensagem de pos-atendimento: envie uma mensagem personalizada 24 horas apos cada visita perguntando como foi o resultado. Simples e gera fidelizacao imediata.',
+        A: 'Defina 3 numeros que voce vai olhar toda semana: atendimentos realizados, ticket medio e quantos clientes voltaram nos ultimos 30 dias. Isso vale mais do que qualquer achismo.',
+      },
+      evolutionPlan: {
+        20: ['Definir os 3 servicos prioritarios e treinar a equipe para prioriz\u00E1-los.', 'Implantar um protocolo basico de atendimento e testar por 30 dias.', 'Adotar um sistema de agendamento online para reduzir faltas.', 'Enviar mensagem de pos-atendimento para todos os clientes.', 'Definir 3 indicadores semanais: atendimentos, ticket medio e retorno.'],
+        41: ['Padronizar o atendimento com ficha tecnica para cada servico do cardapio.', 'Implantar controle financeiro separado e acompanhar resultado por semana.', 'Criar um programa de fidelidade simples e comunicar para os clientes.', 'Estabelecer metas mensais por profissional e revisar em reuniao semanal.', 'Implantar avaliacao de satisfacao e colher depoimentos dos clientes.'],
+        61: ['Estruturar grade de servicos com precificacao baseada em margem real.', 'Criar programa de fidelizacao com beneficios para clientes recorrentes.', 'Implantar treinamento mensal da equipe em tecnicas e atendimento.', 'Definir metas trimestrais e criar um painel visual de acompanhamento.', 'Expandir portfolio de servicos com base nos dados de demanda dos clientes.'],
+        76: ['Criar um programa de crescimento para os profissionais do salao.', 'Implantar NPS (nota de satisfacao) e usar os dados para melhorar continuamente.', 'Desenvolver parcerias com marcas e fornecedores para ampliar receita.', 'Estruturar campanhas sazonais com antecedencia e meta de resultado.', 'Planejar expansao: novo profissional, novo espaco ou nova linha de servicos.'],
+        89: ['Mapear oportunidades de franquia, licenciamento ou novos espacos.', 'Desenvolver um modelo de lideranca com gestora e equipe autonoma.', 'Criar um programa de indicacao estruturado com recompensas claras.', 'Implantar um sistema de BI simples para decisoes baseadas em dados.', 'Planejar o proximo ciclo de crescimento com metas de 12 meses.'],
+      },
+    },
+
+    clinica: {
+      firstSteps: {
+        O: ['Defina os 3 procedimentos com maior retorno financeiro e estruture a agenda prioritariamente para eles.', 'Estabeleca metas mensais de procedimentos realizados, ticket medio e taxa de retorno de pacientes.', 'Implante uma reuniao semanal de revisao de resultados clinicos e financeiros.'],
+        P: ['Documente o protocolo completo de cada procedimento: anamnese, preparo, execucao e cuidados pos.', 'Crie fichas de paciente padronizadas com historico, contraindicacoes e evolucao do tratamento.', 'Estabeleca um fluxo claro de pre-agendamento, confirmacao e pos-procedimento.'],
+        E: ['Implante um software de prontuario e agendamento digital para eliminar papel e reduzir erros.', 'Estruture o financeiro com separacao clara entre receita de procedimentos, produtos e custos fixos.', 'Monte um kit padrao para cada procedimento para ganhar agilidade e garantir seguranca.'],
+        R: ['Envie mensagem personalizada de pos-procedimento com cuidados e suporte 48 horas apos cada sessao.', 'Crie um protocolo de retorno ativo: contato com o paciente 7 dias apos procedimentos mais complexos.', 'Solicite depoimentos e fotos de resultados \u2014 com autorizacao \u2014 para humanizar a clinica.'],
+        A: ['Monitore semanalmente: procedimentos realizados, ticket medio, novos pacientes e taxa de retorno.', 'Crie um relatorio mensal simples de resultados clinicos e financeiros para tomada de decisao.', 'Acompanhe a taxa de satisfacao dos pacientes e use os dados para melhorar processos.'],
+      },
+      recommendations: {
+        O: 'Identifique os 3 procedimentos mais lucrativos da clinica e reorganize sua agenda para prioriz\u00E1-los. Coloque isso no papel, calcule a meta mensal de cada um e compartilhe com sua equipe.',
+        P: 'Comece documentando o protocolo do procedimento mais realizado na clinica: anamnese, preparo, execucao e orientacoes pos. Um protocolo escrito reduz erros, aumenta resultados e facilita a formacao de novos profissionais.',
+        E: 'Implante um sistema de prontuario digital esta semana. Ficha de papel e dif\u00EDcil de encontrar, perder e comprometer a continuidade do tratamento. O investimento se paga rapido em produtividade.',
+        R: 'Crie um protocolo de retorno ativo: ligue ou mande mensagem para todos os pacientes 48 horas apos um procedimento. Esse gesto simples aumenta a fidelizacao e a confianca na clinica.',
+        A: 'Defina agora os 3 indicadores que voce vai acompanhar toda semana: procedimentos realizados, ticket medio e taxa de retorno de pacientes. Com esses numeros voce toma decisoes melhores e mais rapidas.',
+      },
+      evolutionPlan: {
+        20: ['Definir os 3 procedimentos prioritarios e ajustar agenda e divulgacao.', 'Criar ficha de paciente padronizada e protocolo basico de atendimento.', 'Implantar sistema de confirmacao e lembretes automaticos.', 'Enviar mensagem de pos-procedimento para todos os pacientes.', 'Definir indicadores basicos: procedimentos/mes, ticket medio e retorno.'],
+        41: ['Documentar o protocolo de cada procedimento realizado na clinica.', 'Implantar prontuario digital e eliminar o papel do processo.', 'Criar programa de retorno ativo com contato pos-procedimento padronizado.', 'Estabelecer metas mensais e acompanhar resultado em reuniao semanal.', 'Solicitar avaliacoes e depoimentos de pacientes satisfeitos.'],
+        61: ['Estruturar cardapio de procedimentos com precificacao baseada em margem real.', 'Criar pacotes de tratamento com maior valor percebido e ticket medio.', 'Implantar NPS (satisfacao do paciente) e usar dados para melhorar.', 'Desenvolver treinamento continuo da equipe em tecnicas e atendimento.', 'Definir metas trimestrais e criar painel de acompanhamento.'],
+        76: ['Implantar um sistema de BI clinico simples para decisoes baseadas em dados.', 'Criar programa de fidelizacao para pacientes recorrentes.', 'Desenvolver parcerias estrategicas com medicos e outros profissionais da area.', 'Estruturar campanhas sazonais com antecedencia e meta clara.', 'Planejar expansao de procedimentos ou espaco fisico com base em dados.'],
+        89: ['Mapear oportunidades de expansao: novo profissional, nova unidade ou franquia.', 'Desenvolver um modelo de gestao com coordenadora e equipe autonoma.', 'Criar um programa de formacao de profissionais com sua metodologia.', 'Implantar indicadores avancados: LTV do paciente, taxa de reativacao.', 'Planejar o proximo ciclo de crescimento com metas de 12 a 24 meses.'],
+      },
+    },
+
+    barbearia: {
+      firstSteps: {
+        O: ['Liste os 3 servicos mais solicitados e mais rentaveis \u2014 foque a agenda e a divulgacao neles.', 'Defina uma meta mensal de atendimentos e faturamento por barbeiro.', 'Crie uma reuniao rapida de 10 minutos com a equipe toda segunda-feira para alinhar a semana.'],
+        P: ['Crie um roteiro padrao de atendimento: recepcao, consulta de estilo, execucao e finalizacao.', 'Defina o tempo padrao para cada servico e o fluxo de divisao de agenda entre barbeiros.', 'Implante um checklist de abertura e fechamento da barbearia.'],
+        E: ['Adote um aplicativo de agendamento online para reduzir faltas e otimizar a agenda dos barbeiros.', 'Implante um sistema de controle de caixa diario e separe as financas da barbearia das pessoais.', 'Organize o espaco com uma identidade visual consistente e produtos organizados e precificados.'],
+        R: ['Crie um sistema de lembrete automatico de retorno baseado na frequencia ideal de cada cliente.', 'Implante uma mensagem de aniversario com um beneficio exclusivo para clientes fieis.', 'Crie um grupo exclusivo no WhatsApp para clientes frequentes com novidades e vagas na agenda.'],
+        A: ['Acompanhe toda semana: atendimentos por barbeiro, ticket medio e taxa de clientes que retornam.', 'Revise mensalmente o desempenho individual de cada barbeiro e reconheca os melhores resultados.', 'Defina metas mensais por profissional e revise em reuniao rapida na virada do mes.'],
+      },
+      recommendations: {
+        O: 'Defina esta semana quais sao os 3 servicos mais lucrativos da barbearia. Calcule a margem real de cada um e ajuste a agenda para prioriz\u00E1-los. Compartilhe a meta com cada barbeiro.',
+        P: 'Escreva o roteiro de atendimento da barbearia: como o cliente e recebido, como e feita a consulta de estilo, como e a execucao e como e a despedida. Faca isso com a equipe e teste por 30 dias.',
+        E: 'Implante um app de agendamento online esta semana. Clientes que agendam pelo celular faltam muito menos, a agenda fica mais previsivel e os barbeiros trabalham com mais tranquilidade.',
+        R: 'Configure um lembrete automatico de retorno para cada cliente com base na frequencia ideal. Um cliente que corta o cabelo a cada 3 semanas precisa receber uma mensagem na semana 3 \u2014 simples e eficaz.',
+        A: 'Defina 3 numeros para acompanhar toda semana: atendimentos por barbeiro, ticket medio e quantos clientes voltaram nos ultimos 21 dias. Isso vai te mostrar onde esta o problema antes que ele vire crise.',
+      },
+      evolutionPlan: {
+        20: ['Definir servicos prioritarios e meta mensal por barbeiro.', 'Criar roteiro de atendimento e testar com a equipe.', 'Implantar agendamento online e controle de caixa basico.', 'Configurar lembretes automaticos de retorno para clientes.', 'Definir 3 indicadores semanais e acompanhar toda semana.'],
+        41: ['Padronizar atendimento com roteiro documentado e treinamento.', 'Estruturar controle financeiro e separar contas pessoais e da barbearia.', 'Criar programa de fidelidade e comunicar para base de clientes.', 'Estabelecer metas mensais por barbeiro e revisar em reuniao semanal.', 'Solicitar avaliacoes no Google e depoimentos de clientes satisfeitos.'],
+        61: ['Estruturar cardapio de servicos com precificacao baseada em margem.', 'Criar um programa de fidelizacao com beneficios escalonados.', 'Implantar treinamento mensal de tecnicas e atendimento da equipe.', 'Definir metas trimestrais com painel de acompanhamento visivel.', 'Desenvolver identidade visual e posicionamento de marca consistente.'],
+        76: ['Criar programa de desenvolvimento para os barbeiros da equipe.', 'Implantar NPS e usar os dados para melhorar a experiencia do cliente.', 'Desenvolver parcerias com marcas de produtos para ampliar receita.', 'Estruturar campanhas sazonais com meta e divulgacao planejadas.', 'Planejar expansao: nova cadeira, novo profissional ou nova unidade.'],
+        89: ['Mapear oportunidades de expansao e modelo de franquia.', 'Desenvolver um modelo de gestao com lider de equipe autonomo.', 'Criar programa de formacao de novos barbeiros com sua metodologia.', 'Implantar indicadores avancados: LTV por cliente, taxa de reativacao.', 'Planejar proximo ciclo de crescimento com metas de 12 a 24 meses.'],
+      },
+    },
+
+    beauty: {
+      firstSteps: {
+        O: ['Defina quais tecnicas e servicos geram mais receita e estruture a agenda em torno delas.', 'Estabeleca metas mensais por tipo de servico e por profissional do studio.', 'Crie um calendario mensal de atividades com prioridades definidas com antecedencia.'],
+        P: ['Documente o passo a passo de cada tecnica principal com materiais, tempo e cuidados necessarios.', 'Crie fichas de cliente com historico de servicos, preferencias e observacoes tecnicas.', 'Estabeleca um fluxo de atendimento padrao do agendamento ate a avaliacao pos-servico.'],
+        E: ['Implante um sistema digital de agendamento que permita ao cliente marcar pelo celular.', 'Crie uma estrutura de precificacao clara por servico com margem calculada sobre custo de materiais.', 'Organize o espaco de trabalho com os materiais de cada tecnica separados e de facil acesso.'],
+        R: ['Envie cuidados pos-servico personalizados por mensagem logo apos cada atendimento.', 'Crie um programa de indicacao: cliente que traz uma amiga ganha desconto no proximo servico.', 'Acompanhe o resultado do servico com uma mensagem 7 dias depois perguntando como esta.'],
+        A: ['Acompanhe toda semana: atendimentos realizados, ticket medio e servicos mais solicitados.', 'Revise mensalmente quais servicos geraram mais receita e ajuste o foco da divulgacao.', 'Monitore a taxa de retorno e identifique clientes que nao voltaram nos ultimos 60 dias.'],
+      },
+      recommendations: {
+        O: 'Mapeie os 3 servicos com maior margem do seu studio. Reorganize a agenda para prioriz\u00E1-los, crie metas mensais e acompanhe o resultado por semana. Foco e o que transforma esforco em resultado.',
+        P: 'Documente o passo a passo da sua tecnica principal com fotos se possivel: materiais, tempo, cuidados, orientacoes ao cliente. Esse documento vira o padrao do seu studio e facilita muito treinar alguem novo.',
+        E: 'Implante um app de agendamento online esta semana. Clientes de beauty design querem praticidade \u2014 poder marcar pelo celular aumenta o agendamento espontaneo e reduz as faltas.',
+        R: 'Crie uma mensagem de pos-servico personalizada enviada no dia seguinte ao atendimento. Mencione o servico que foi feito e da dicas de manutencao. Esse cuidado gera retorno e indicacoes.',
+        A: 'Defina 3 numeros para acompanhar toda semana: atendimentos, ticket medio e quantas clientes voltaram nos ultimos 45 dias. Com esses dados voce sabe exatamente onde focar sua energia.',
+      },
+      evolutionPlan: {
+        20: ['Definir os servicos prioritarios e reorganizar a agenda.', 'Documentar o passo a passo das tecnicas principais.', 'Implantar agendamento online e controle de materiais.', 'Criar mensagem de pos-servico para todas as clientes.', 'Definir 3 indicadores e acompanhar toda semana.'],
+        41: ['Criar fichas de cliente com historico e preferencias.', 'Estruturar precificacao com margem calculada em todos os servicos.', 'Implantar programa de indicacao e comunicar para a base.', 'Estabelecer metas mensais e revisar os resultados semanalmente.', 'Solicitar avaliacoes no Google e depoimentos das clientes.'],
+        61: ['Estruturar um cardapio de servicos com posicionamento claro.', 'Criar pacotes e combos com maior valor percebido e ticket.', 'Implantar treinamento continuo em novas tecnicas e atendimento.', 'Definir metas trimestrais e criar painel de acompanhamento.', 'Desenvolver identidade visual e posicionamento de marca consistentes.'],
+        76: ['Criar um programa de fidelizacao com beneficios para clientes recorrentes.', 'Implantar NPS e usar dados para melhorar continuamente.', 'Desenvolver parcerias com marcas de produtos e outros profissionais.', 'Estruturar campanhas sazonais com antecedencia e meta de resultado.', 'Planejar expansao de espaco, servicos ou equipe com base em dados.'],
+        89: ['Mapear oportunidades de expansao e novos canais de receita.', 'Desenvolver um modelo com equipe autonoma e gestao por indicadores.', 'Criar um programa de formacao em tecnicas com sua metodologia propria.', 'Implantar indicadores avancados: LTV por cliente, taxa de reativacao.', 'Planejar proximo ciclo de crescimento com metas de 12 a 24 meses.'],
+      },
+    },
+
+    spa: {
+      firstSteps: {
+        O: ['Mapeie os pacotes e tratamentos com maior ticket medio e maior taxa de retorno de clientes.', 'Defina metas mensais de ocupacao, faturamento por tratamento e satisfacao dos hospedes.', 'Crie uma rotina semanal de revisao de agenda, cancelamentos e oportunidades de venda.'],
+        P: ['Documente o roteiro completo de cada tratamento: recepcao, avaliacao, execucao e pos-sessao.', 'Crie protocolos de experiencia: recepcao, ambiente, acompanhamento durante e apos o tratamento.', 'Implante um sistema de avaliacao de satisfacao ao final de cada visita.'],
+        E: ['Implante um software de gestao de spa com agendamento, historico de clientes e controle financeiro.', 'Estruture os pacotes com custo real, margem e tempo de ocupacao bem definidos.', 'Organize os ambientes com protocolos de higienizacao, preparacao e manutencao documentados.'],
+        R: ['Crie um ritual de pos-visita: envie uma mensagem personalizada com dicas de manutencao em casa.', 'Implante um programa de beneficios para clientes recorrentes com vantagens exclusivas.', 'Solicite avaliacao e convide o cliente a compartilhar a experiencia nas redes sociais.'],
+        A: ['Monitore toda semana: taxa de ocupacao, ticket medio e indice de satisfacao das visitas.', 'Revise mensalmente o desempenho de cada tratamento e pacote para ajustar o cardapio.', 'Acompanhe o NPS dos clientes com uma pergunta simples ao final de cada visita.'],
+      },
+      recommendations: {
+        O: 'Mapeie os 3 tratamentos com maior ticket e maior taxa de retorno. Reorganize a grade de horarios para prioriz\u00E1-los e crie metas mensais de ocupacao para cada um.',
+        P: 'Documente o roteiro completo da experiencia no seu spa \u2014 da chegada do cliente a despedida. Isso e o que garante consistencia e faz com que cada visita seja especial, independente de quem atende.',
+        E: 'Implante um software de gestao de spa esta semana. O controle de agendamentos, historico dos clientes e financeiro em um unico lugar transforma a gestao do negocio.',
+        R: 'Crie um ritual de pos-visita: envie uma mensagem personalizada 24 horas apos cada tratamento com dicas exclusivas de manutencao em casa. Esse gesto diferencia e cria vinculos.',
+        A: 'Monitore 3 indicadores toda semana: taxa de ocupacao dos espaces, ticket medio e indice de satisfacao. Com esses dados voce toma decisoes de cardapio, preco e promocao com muito mais precisao.',
+      },
+      evolutionPlan: {
+        20: ['Definir os 3 tratamentos prioritarios e organizar a grade em torno deles.', 'Documentar o roteiro de experiencia de cada tratamento.', 'Implantar sistema de agendamento e controle financeiro basico.', 'Criar mensagem de pos-visita para todos os clientes.', 'Definir indicadores de ocupacao e satisfacao para acompanhar.'],
+        41: ['Padronizar a experiencia com protocolos documentados.', 'Estruturar pacotes com custo e margem calculados.', 'Implantar programa de beneficios para clientes recorrentes.', 'Estabelecer metas mensais e revisar os resultados semanalmente.', 'Implantar pesquisa de satisfacao e colher NPS dos clientes.'],
+        61: ['Criar um cardapio de experiencias com posicionamento premium.', 'Desenvolver pacotes sazonais e ofertas de alto valor percebido.', 'Implantar treinamento continuo da equipe em tecnicas e hospitalidade.', 'Definir metas trimestrais e criar painel de acompanhamento.', 'Estruturar campanhas de fidelizacao com base em dados de frequencia.'],
+        76: ['Desenvolver um programa de membros com beneficios exclusivos.', 'Implantar NPS sistematico e usar dados para elevar a experiencia.', 'Criar parcerias com hoteis, medicos e outros canais de referencia.', 'Estruturar campanhas sazonais com antecedencia e meta clara.', 'Planejar expansao de espacos ou novos servicos com base na demanda.'],
+        89: ['Mapear oportunidades de expansao e posicionamento de marca.', 'Criar um modelo de gestao com lideranca autonoma da equipe.', 'Desenvolver programa de formacao com metodologia propria.', 'Implantar indicadores avancados: LTV, taxa de reativacao, NPS.', 'Planejar proximo ciclo de crescimento com horizonte de 24 meses.'],
+      },
+    },
+
+    studio: {
+      firstSteps: {
+        O: ['Defina sua metodologia principal e comunique claramente os resultados que o aluno pode esperar.', 'Estabeleca metas mensais de alunos ativos, retencao e taxa de renovacao de matriculas.', 'Crie uma rotina semanal de acompanhamento dos alunos e revisao da grade de horarios.'],
+        P: ['Documente a metodologia de avaliacao inicial e o plano de evolucao personalizado por aluno.', 'Crie um roteiro padrao de aula ou sessao com tempo de aquecimento, foco e encerramento.', 'Estabeleca um protocolo de acompanhamento de progresso e renovacao de matriculas.'],
+        E: ['Adote um sistema de gestao de alunos com controle de matriculas, frequencia e pagamentos.', 'Estruture seus planos com clareza: mensal, trimestral e semestral com beneficios definidos.', 'Organize o espaco fisico e equipamentos com manutencao preventiva programada.'],
+        R: ['Acompanhe a frequencia de cada aluno e entre em contato proativamente se faltar 2 aulas seguidas.', 'Crie uma newsletter ou grupo de acompanhamento com dicas e reconhecimento de evolucoes.', 'Celebre as conquistas dos alunos em aula e nas redes \u2014 resultados vis\u00EDveis geram indicacoes.'],
+        A: ['Monitore toda semana: frequencia dos alunos, churn de matriculas e novas vendas.', 'Revise mensalmente a evolucao de cada aluno e identifique quem pode estar em risco de desistir.', 'Acompanhe a taxa de renovacao de planos e use esse dado para melhorar sua proposta de valor.'],
+      },
+      recommendations: {
+        O: 'Defina com clareza quais sao os resultados que seu studio entrega \u2014 e para qual perfil de aluno. Coloque isso no papel, use como base da comunicacao e construa a grade de horarios em torno disso.',
+        P: 'Documente sua metodologia de avaliacao inicial: como voce recebe um aluno novo, o que avalia e como cria o plano de evolucao. Isso e o que transforma seu studio em algo que pode crescer sem depender so de voce.',
+        E: 'Adote um sistema de gestao de alunos esta semana. Controlar matriculas, frequencia e pagamentos numa planilha e possivel ate certo ponto \u2014 mas um sistema proprio economiza tempo e evita perdas.',
+        R: 'Implante um protocolo de contato ativo: sempre que um aluno faltar 2 vezes seguidas, entre em contato. Esse simples gesto reduz a evasao significativamente e mostra que voce se importa com a evolucao deles.',
+        A: 'Defina 3 indicadores para acompanhar toda semana: frequencia media dos alunos, renovacoes do mes e novas matriculas. Esses numeros vao te mostrar a saude do studio antes que qualquer problema se torne crise.',
+      },
+      evolutionPlan: {
+        20: ['Definir a metodologia e o perfil de aluno ideal do studio.', 'Criar avaliacao inicial padronizada e plano de evolucao por aluno.', 'Implantar sistema de gestao de alunos e controle de frequencia.', 'Configurar contato ativo para alunos com frequencia irregular.', 'Definir 3 indicadores semanais: frequencia, churn e novas vendas.'],
+        41: ['Documentar metodologia e criar roteiro padrao de aula ou sessao.', 'Estruturar planos com beneficios claros por periodo de compromisso.', 'Criar protocolo de renovacao e contato antes do vencimento do plano.', 'Estabelecer metas mensais e revisar os resultados semanalmente.', 'Celebrar resultados dos alunos nas redes e no proprio espaco.'],
+        61: ['Estruturar uma grade de horarios com maior taxa de ocupacao.', 'Criar um programa de indicacao para alunos que trazem amigos.', 'Implantar treinamento continuo e desenvolvimento da equipe docente.', 'Definir metas trimestrais e criar painel de acompanhamento.', 'Desenvolver conteudo educativo para fortalecer o posicionamento.'],
+        76: ['Criar um programa de alumni com beneficios para alunos de longo prazo.', 'Implantar NPS e usar dados para elevar a experiencia e reduzir churn.', 'Desenvolver parcerias com empresas, escolas ou outros canais.', 'Estruturar campanhas de matricula com antecedencia e meta clara.', 'Planejar expansao: nova turma, nova modalidade ou novo espaco.'],
+        89: ['Mapear oportunidades de expansao e formacao de novos instrutores.', 'Criar um modelo de franquia ou licenciamento da metodologia.', 'Desenvolver programa online complementar ao presencial.', 'Implantar indicadores avancados: LTV por aluno, NPS, retencao.', 'Planejar proximo ciclo com horizonte de crescimento de 24 meses.'],
+      },
+    },
+
+    consultoria: {
+      firstSteps: {
+        O: ['Defina suas 3 especialidades principais e o perfil ideal de cliente que voce atende.', 'Estabeleca metas mensais de projetos, horas faturadas e ticket medio por cliente.', 'Crie uma rotina semanal de revisao de projetos em andamento e pipeline de novos clientes.'],
+        P: ['Documente sua metodologia de trabalho: diagnostico, proposta, execucao e entrega.', 'Crie templates padronizados de proposta, contrato e relatorio de resultados.', 'Estabeleca um fluxo de onboarding para novos clientes com etapas e responsabilidades claras.'],
+        E: ['Monte um sistema de gestao de clientes e projetos (CRM simples) para centralizar informacoes.', 'Estruture sua proposta de honorarios com escopo bem definido e clausulas claras de entregas.', 'Crie um repositorio organizado de documentos, modelos e entregaveis por cliente.'],
+        R: ['Envie um relatorio de resultado mensal para cada cliente ativo com entregas e proximos passos.', 'Faca uma chamada de check-in rapida de 15 minutos com cada cliente pelo menos uma vez por mes.', 'Ao encerrar um projeto, envie um resumo executivo e abra conversa sobre o proximo desafio.'],
+        A: ['Monitore mensalmente: horas faturadas por projeto, margem por cliente e pipeline de novos.', 'Revise trimestralmente o desempenho de cada cliente: resultado entregue vs resultado esperado.', 'Acompanhe o LTV (valor do cliente ao longo do tempo) para priorizar os clientes mais estrategicos.'],
+      },
+      recommendations: {
+        O: 'Defina com clareza as 3 especialidades que voce domina e o perfil de cliente que voce resolve de forma excelente. Isso e o que vai guiar sua comunicacao, seu comercial e a selecao de projetos.',
+        P: 'Documente sua metodologia de trabalho: como voce faz o diagnostico, como elabora a proposta e como entrega os resultados. Uma metodologia documentada e seu principal diferencial competitivo.',
+        E: 'Monte um CRM simples esta semana \u2014 pode ser no Notion, Trello ou planilha bem estruturada. Centralizar as informacoes de cada cliente elimina retrabalho e garante que nada importante se perca.',
+        R: 'Implante um relatorio de resultado mensal para cada cliente ativo. Dois paragrafos com o que foi entregue, o que esta em andamento e o proximo passo. Isso profissionaliza o relacionamento e justifica a renovacao.',
+        A: 'Defina 3 indicadores para acompanhar todo mes: horas faturadas, margem por projeto e novos clientes no pipeline. Esses numeros revelam a saude do seu negocio antes que qualquer problema se torne urgente.',
+      },
+      evolutionPlan: {
+        20: ['Definir especialidades, perfil de cliente ideal e posicionamento.', 'Criar metodologia documentada e templates de proposta e contrato.', 'Montar CRM simples para acompanhar clientes e projetos.', 'Implantar relatorio mensal de resultado para cada cliente ativo.', 'Definir 3 indicadores mensais: horas, margem e pipeline.'],
+        41: ['Padronizar metodologia e criar roteiro de onboarding de novos clientes.', 'Estruturar precificacao com base em valor entregue, nao apenas em horas.', 'Criar um processo de relacionamento ativo com todos os clientes atuais.', 'Estabelecer metas mensais de faturamento e pipeline e revisar semanalmente.', 'Solicitar depoimentos e estudos de caso de clientes satisfeitos.'],
+        61: ['Desenvolver um produto ou metodologia scalable alem do servico 1:1.', 'Criar um processo de vendas documentado com etapas e taxa de conversao.', 'Implantar processo de upsell e renovacao para clientes atuais.', 'Definir metas trimestrais e criar painel de acompanhamento do negocio.', 'Construir presenca de autoridade: conteudo, palestras ou publicacoes.'],
+        76: ['Criar um modelo de consultoria em grupo ou produto escalavel.', 'Implantar NPS de clientes e usar dados para aprimorar a entrega.', 'Desenvolver parcerias estrategicas com outros profissionais e canais.', 'Estruturar campanhas de captacao de novos clientes com meta.', 'Planejar expansao da equipe ou modelo de associados.'],
+        89: ['Mapear oportunidades de escalabilidade e novos modelos de receita.', 'Desenvolver um modelo com time autonomo e gestao por indicadores.', 'Criar um programa de formacao ou certificacao com sua metodologia.', 'Implantar indicadores avancados: LTV, taxa de renovacao, NPS.', 'Planejar proximo ciclo de crescimento com horizonte de 24 meses.'],
+      },
+    },
+
+  }, /* fim _segmentContent */
+
   _firstSteps: {
     O: ['Definir por escrito as 5 prioridades de maior impacto no neg\u00F3cio.','Escrever as 3 metas principais para os pr\u00F3ximos 90 dias.','Criar uma rotina semanal com blocos de tempo protegidos.'],
     P: ['Documentar o passo a passo do atendimento padr\u00E3o ao cliente.','Criar um checklist de abertura e fechamento do dia.','Mapear os 3 processos que mais geram retrabalho e propor ajustes.'],
@@ -5730,8 +6081,33 @@ LUME.Diagnostic = {
     return (arr.find(function(t){ return score<=t.max; })||arr[arr.length-1]||{}).text||'';
   },
 
-  getFirstSteps(key)            { return this._firstSteps[key]||[]; },
-  getInitialRecommendation(key) { return this._initialRecommendations[key]||''; },
+  getFirstSteps(pilarKey) {
+    var seg = ((this._state.identification || {}).segment || '').toLowerCase();
+    var segData = this._segmentContent[seg];
+    if (segData && segData.firstSteps && segData.firstSteps[pilarKey]) {
+      return segData.firstSteps[pilarKey];
+    }
+    return this._firstSteps[pilarKey] || [];
+  },
+
+  getInitialRecommendation(pilarKey) {
+    var seg = ((this._state.identification || {}).segment || '').toLowerCase();
+    var segData = this._segmentContent[seg];
+    if (segData && segData.recommendations && segData.recommendations[pilarKey]) {
+      return segData.recommendations[pilarKey];
+    }
+    return this._initialRecommendations[pilarKey] || '';
+  },
+
+  getSegmentEvolutionPlan(iee) {
+    var seg = ((this._state.identification || {}).segment || '').toLowerCase();
+    var segData = this._segmentContent[seg];
+    var level = iee >= 89 ? 89 : iee >= 76 ? 76 : iee >= 61 ? 61 : iee >= 41 ? 41 : 20;
+    if (segData && segData.evolutionPlan && segData.evolutionPlan[level]) {
+      return segData.evolutionPlan[level];
+    }
+    return null; /* fallback para o plano do n\u00EDvel IEE */
+  },
 
   getCompletionTime() {
     if (!this._state.startedAt||!this._state.completedAt) return null;
@@ -5772,7 +6148,7 @@ LUME.Diagnostic = {
       biggestGap:            ranked[0],
       topPriorities:         ranked.slice(0,3),
       initialRecommendation: this.getInitialRecommendation(ranked[0].key),
-      evolutionPlan:         ieeBand.evolutionPlan,
+      evolutionPlan:         this.getSegmentEvolutionPlan(iee) || ieeBand.evolutionPlan,
       completionTime:        this.getCompletionTime(),
       version:               this._state.version,
       date: new Date().toLocaleDateString('pt-BR',{day:'numeric',month:'long',year:'numeric'}),
@@ -5796,12 +6172,22 @@ LUME.Diagnostic = {
     var str  = r.biggestStrength;
     var iee  = r.iee;
 
+    /* Contexto do segmento para personalizar o parecer */
+    var segLabels = {
+      salao:'sal\u00E3o de beleza', clinica:'cl\u00EDnica est\u00E9tica', barbearia:'barbearia',
+      beauty:'studio de beauty design', spa:'spa', studio:'studio',
+      consultoria:'empresa de consultoria', servicos:'empresa de servi\u00E7os',
+      comercio:'neg\u00F3cio comercial', outro:'neg\u00F3cio'
+    };
+    var seg    = ((id.segment||'').toLowerCase());
+    var segCtx = segLabels[seg] || 'neg\u00F3cio';
+
     var texts = {
-      20: name+', este diagn\u00F3stico revela um neg\u00F3cio com grande potencial ainda n\u00E3o estruturado. '+co+' ainda depende fortemente da sua presen\u00E7a para funcionar. A principal oportunidade de transforma\u00E7\u00E3o est\u00E1 em **'+gap.name+'**. E \u00E9 sobre **'+str.name+'** \u2014 seu ponto mais forte \u2014 que a evolu\u00E7\u00E3o deve come\u00E7ar.',
-      41: name+', '+co+' j\u00E1 est\u00E1 em movimento na dire\u00E7\u00E3o certa. Existem iniciativas positivas e clareza parcial de dire\u00E7\u00E3o. O desafio atual s\u00E3o as inconsist\u00EAncias: o que funciona em alguns momentos n\u00E3o se repete em outros. Consolidar **'+str.name+'** como base e fortalecer **'+gap.name+'** \u00E9 o caminho mais inteligente agora.',
-      61: name+', '+co+' j\u00E1 demonstra evolu\u00E7\u00E3o consistente. H\u00E1 processos razoavelmente definidos e capacidade real de crescimento. Fortalecer **'+gap.name+'** \u00E9 o que vai transformar uma empresa em desenvolvimento em uma empresa verdadeiramente estruturada.',
-      76: name+', '+co+' opera com uma base de gest\u00E3o s\u00F3lida. Voc\u00EA tem previsibilidade, processos definidos e clareza de dire\u00E7\u00E3o. O destaque em **'+str.name+'** \u00E9 um diferencial real. Refinar **'+gap.name+'** vai abrir o pr\u00F3ximo ciclo de crescimento com mais consist\u00EAncia.',
-      89: name+', '+co+' atingiu o n\u00EDvel mais alto de maturidade. A empresa opera com consist\u00EAncia em todos os pilares, com destaque para **'+str.name+'**. O foco agora est\u00E1 em manter essa qualidade enquanto expande para novos ciclos de crescimento.',
+      20: name+', este diagn\u00F3stico revela um '+segCtx+' com grande potencial ainda n\u00E3o estruturado. '+co+' ainda depende fortemente da sua presen\u00E7a para funcionar no dia a dia. A principal oportunidade de transforma\u00E7\u00E3o est\u00E1 em **'+gap.name+'** \u2014 o pilar mais cr\u00EDtico neste momento. \u00C9 sobre **'+str.name+'** \u2014 seu ponto mais forte \u2014 que a evolu\u00E7\u00E3o deve come\u00E7ar.',
+      41: name+', '+co+' j\u00E1 est\u00E1 em movimento na dire\u00E7\u00E3o certa. O '+segCtx+' demonstra iniciativas positivas e clareza parcial de dire\u00E7\u00E3o. O desafio atual s\u00E3o as inconsist\u00EAncias: o que funciona em alguns momentos n\u00E3o se repete em outros. Consolidar **'+str.name+'** como base e fortalecer **'+gap.name+'** \u00E9 o caminho mais inteligente agora.',
+      61: name+', '+co+' j\u00E1 demonstra evolu\u00E7\u00E3o consistente como '+segCtx+'. H\u00E1 processos razoavelmente definidos e capacidade real de crescimento. Fortalecer **'+gap.name+'** \u00E9 o que vai transformar um neg\u00F3cio em desenvolvimento em uma empresa verdadeiramente estruturada e previs\u00EDvel.',
+      76: name+', '+co+' opera com uma base de gest\u00E3o s\u00F3lida para um '+segCtx+'. Voc\u00EA tem previsibilidade, processos definidos e clareza de dire\u00E7\u00E3o. O destaque em **'+str.name+'** \u00E9 um diferencial real. Refinar **'+gap.name+'** vai abrir o pr\u00F3ximo ciclo de crescimento com mais consist\u00EAncia e menos esfor\u00E7o.',
+      89: name+', '+co+' atingiu o mais alto n\u00EDvel de maturidade no M\u00E9todo OPERA\u2122. O '+segCtx+' opera com consist\u00EAncia em todos os pilares, com destaque especial para **'+str.name+'**. O foco agora est\u00E1 em manter essa qualidade enquanto identifica novas alavancas de crescimento e expans\u00E3o.',
     };
     var level = iee>=89?89:iee>=76?76:iee>=61?61:iee>=41?41:20;
     return texts[level];
@@ -6489,66 +6875,74 @@ LUME.App = {
     var books  = LUME.Diagnostic.getRecommendedBooks();
     if (!result) return;
 
-    var priorities = (result.topPriorities || []).map(function(p, i) {
+    var priorities = (result.topPriorities || []).map(function(p) {
       return p.firstSteps.map(function(step) {
-        return '<li><label><input type="checkbox"> ' + step + '</label></li>';
+        return '<li><label class="lume-print-check"><span class="lume-print-box"></span>' + step + '</label></li>';
       }).join('');
     }).join('');
 
-    var planItems = (result.evolutionPlan || []).map(function(action, i) {
-      return '<li><label><input type="checkbox"> ' + action + '</label></li>';
+    var planItems = (result.evolutionPlan || []).map(function(action) {
+      return '<li><label class="lume-print-check"><span class="lume-print-box"></span>' + action + '</label></li>';
     }).join('');
 
-    var bookItems = books.map(function(b) {
-      return '<tr><td><strong>' + b.title + '</strong><br><span style="color:#666">' + b.author + '</span></td><td style="color:#555;font-size:13px">' + b.desc + '</td></tr>';
+    var bookRows = books.map(function(b) {
+      return '<tr><td><strong>' + b.title + '</strong><br><span class="lume-print-author">' + b.author + '</span></td>' +
+             '<td>' + b.desc + '</td></tr>';
     }).join('');
 
-    var html =
-      '<!DOCTYPE html><html><head><meta charset="UTF-8">' +
-      '<title>Checklist OPERA - ' + (id.company || id.name || 'Diagnostico') + '</title>' +
-      '<style>' +
-        'body{font-family:Georgia,serif;max-width:680px;margin:0 auto;padding:40px 32px;color:#1a1a1a;font-size:14px;line-height:1.6}' +
-        'h1{font-size:22px;font-weight:700;color:#1F3D34;margin:0 0 4px}' +
-        'h2{font-size:15px;font-weight:700;color:#1F3D34;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid #1F3D34}' +
-        'h3{font-size:13px;font-weight:700;color:#555;margin:0 0 12px;letter-spacing:.08em;text-transform:uppercase}' +
-        '.meta{font-size:12px;color:#888;margin-bottom:32px;display:flex;gap:24px;flex-wrap:wrap}' +
-        '.badge{display:inline-block;background:#1F3D34;color:white;font-size:12px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:24px;letter-spacing:.05em}' +
-        'ul{list-style:none;padding:0;margin:0 0 8px}' +
-        'li{margin-bottom:10px}' +
-        'label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:13px}' +
-        'input[type=checkbox]{margin-top:3px;width:14px;height:14px;flex-shrink:0;accent-color:#1F3D34}' +
-        'table{width:100%;border-collapse:collapse;margin-top:4px}' +
-        'td{padding:10px 8px;border-bottom:1px solid #eee;vertical-align:top;font-size:13px}' +
-        'tr:last-child td{border-bottom:none}' +
-        '.footer{margin-top:40px;padding-top:16px;border-top:1px solid #ddd;font-size:11px;color:#aaa;text-align:center}' +
-        '@media print{body{padding:24px}@page{margin:16mm}}' +
-      '</style></head><body>' +
-      '<h3>LUME OS &mdash; M&eacute;todo OPERA&trade;</h3>' +
-      '<h1>' + (id.company || id.name || 'Diagn&oacute;stico') + '</h1>' +
-      '<div class="meta">' +
-        '<span>Respons&aacute;vel: ' + (id.name || '&mdash;') + '</span>' +
-        '<span>Data: ' + result.date + '</span>' +
-        '<span>Segmento: ' + (id.segment || '&mdash;') + '</span>' +
-        (result.completionTime ? '<span>Dura&ccedil;&atilde;o: ' + result.completionTime + '</span>' : '') +
-      '</div>' +
-      '<div class="badge">N&iacute;vel de Evolu&ccedil;&atilde;o: ' + result.ieeBand.level + ' ' + result.ieeBand.icon + '</div>' +
-      '<h2>Prioridades de Evolu&ccedil;&atilde;o</h2>' +
-      '<ul>' + priorities + '</ul>' +
-      '<h2>Plano Inicial de Evolu&ccedil;&atilde;o</h2>' +
-      '<ul>' + planItems + '</ul>' +
-      '<h2>Pr&oacute;ximo Objetivo</h2>' +
-      '<p style="font-style:italic;color:#333">' + (result.ieeBand.nextObjective || '') + '</p>' +
-      '<h2>Pr&oacute;xima Avalia&ccedil;&atilde;o Recomendada</h2>' +
-      '<p style="color:#555">' + (result.ieeBand.nextAssessment || '') + '</p>' +
-      '<h2>Leitura Recomendada</h2>' +
-      '<table>' + bookItems + '</table>' +
-      '<div class="footer">Diagn&oacute;stico OPERA&trade; &mdash; LUME OS &mdash; ' + result.date + '</div>' +
-      '</body></html>';
+    var area = document.getElementById('lume-print-area');
+    if (!area) return;
 
-    var win = window.open('', '_blank', 'width=720,height=900');
-    win.document.write(html);
-    win.document.close();
-    win.onload = function() { win.print(); };
+    area.innerHTML =
+      '<div class="lume-print-doc">' +
+        '<div class="lume-print-header">' +
+          '<div class="lume-print-brand">LUME OS \u00b7 M\u00e9todo OPERA\u2122</div>' +
+          '<h1 class="lume-print-company">' + (id.company || id.name || 'Diagn\u00f3stico') + '</h1>' +
+          '<div class="lume-print-meta">' +
+            '<span>Respons\u00e1vel: ' + (id.name || '\u2014') + '</span>' +
+            '<span>Data: ' + result.date + '</span>' +
+            '<span>Segmento: ' + (id.segment || '\u2014') + '</span>' +
+            (result.completionTime ? '<span>Dura\u00e7\u00e3o: ' + result.completionTime + '</span>' : '') +
+          '</div>' +
+          '<div class="lume-print-level">' +
+            '<span class="lume-print-level-badge">N\u00edvel de Evolu\u00e7\u00e3o</span>' +
+            '<span class="lume-print-level-name">' + result.ieeBand.level + '</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="lume-print-section">' +
+          '<h2>Prioridades de Evolu\u00e7\u00e3o</h2>' +
+          '<ul>' + priorities + '</ul>' +
+        '</div>' +
+        '<div class="lume-print-section">' +
+          '<h2>Plano Inicial de Evolu\u00e7\u00e3o</h2>' +
+          '<ul>' + planItems + '</ul>' +
+        '</div>' +
+        '<div class="lume-print-section">' +
+          '<h2>Pr\u00f3ximo Objetivo</h2>' +
+          '<p class="lume-print-text lume-print-text--italic">' + (result.ieeBand.nextObjective || '') + '</p>' +
+        '</div>' +
+        '<div class="lume-print-section">' +
+          '<h2>Pr\u00f3xima Avalia\u00e7\u00e3o Recomendada</h2>' +
+          '<p class="lume-print-text">' + (result.ieeBand.nextAssessment || '') + '</p>' +
+        '</div>' +
+        '<div class="lume-print-section lume-print-section--books">' +
+          '<h2>Leitura Recomendada</h2>' +
+          '<table class="lume-print-table"><tbody>' + bookRows + '</tbody></table>' +
+        '</div>' +
+        '<div class="lume-print-footer">Diagn\u00f3stico OPERA\u2122 \u2014 LUME OS \u2014 ' + result.date + '</div>' +
+      '</div>';
+
+    /* Dispara o print na pr\u00F3pria p\u00E1gina */
+    document.body.classList.add('lume-is-printing');
+    window.print();
+
+    /* Remove a classe ap\u00F3s o di\u00E1logo de impress\u00E3o fechar */
+    var self = this;
+    var cleanup = function() {
+      document.body.classList.remove('lume-is-printing');
+      window.removeEventListener('focus', cleanup);
+    };
+    window.addEventListener('focus', cleanup);
   },
 
   /* \u2500\u2500 RESTART \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 */
